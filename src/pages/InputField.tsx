@@ -4,7 +4,7 @@ export const InputFieldPage: React.FC = () => {
     const [value, setValue] = useState('');
 
     return (
-        <main>
+        <main id="main-content" role="main">
             <form>
                 <div>
                     <label htmlFor="accessible-input">Your Name</label>

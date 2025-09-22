@@ -10,7 +10,7 @@ export const RadioButtonPage: React.FC = () => {
     const [selected, setSelected] = useState<string>(options[0].value);
 
     return (
-        <main>
+        <main id="main-content" role="main" style={{ padding: '1rem' }}>
             <h1>Accessible Radio Button Example</h1>
             <form>
                 <fieldset>

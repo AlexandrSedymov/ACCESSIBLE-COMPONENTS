@@ -2,7 +2,7 @@ import React from 'react';
 
 export const LinksVsButtons: React.FC = () => {
     return (
-        <main>
+        <main id="main-content" role="main" style={{ padding: '1rem' }}>
             <h1>Links vs Buttons</h1>
             <section aria-labelledby="links-section">
                 <h2 id="links-section">Accessible Links</h2>
