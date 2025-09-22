@@ -1,0 +1,28 @@
+/* --- Global Styles for Centering --- */
+
+/* Set the body to be a flex container that fills the entire screen.
+  This is the key to perfect vertical and horizontal centering.
+*/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  min-height: 100vh;      /* Ensure body takes at least the full viewport height */
+  height: 100vh;          /* Ensure body fills the viewport from top to bottom */
+  margin: 0;              /* Remove default body margin */
+  background-color: #f7fafc; /* Optional: A light background to see the content area */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Target the root div where your React app is mounted.
+  This is where we apply padding and control the width of your content.
+*/
+#root {
+  width: 100%;
+  height: 100%;
+  max-width: 1280px; /* Use a valid CSS value for max-width */
+  padding: 2rem; /* Add generous padding (32px) around your content */
+  margin: 0;  /* Remove margin so #root fills the flex container */
+  box-sizing: border-box;
+}
