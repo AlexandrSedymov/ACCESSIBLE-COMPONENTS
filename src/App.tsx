@@ -1,22 +1,26 @@
 import './App.css';
+import './styles/SkipLink.css';
+
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
-import { Blog } from './pages/Blog';
-import { Gallery } from './pages/Gallery';
-import { About } from './pages/About';
-
+import { ModalDialog } from './pages/ModalDialog';
+import { LinksVsButtons } from './pages/LinksVsButtons';
+import { RadioButtonPage } from './pages/RadioButton';
+import { InputFieldPage } from './pages/InputField';
 
 function App() {
   return (
     <BrowserRouter>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path='/gallery' element={<Gallery />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/modal-dialog" element={<ModalDialog />} />
+        <Route path="/links-vs-buttons" element={<LinksVsButtons />} />
+        <Route path="/radio-buttons" element={<RadioButtonPage />} />
+        <Route path="/input-fields" element={<InputFieldPage />} />
       </Routes>
     </BrowserRouter>
   )

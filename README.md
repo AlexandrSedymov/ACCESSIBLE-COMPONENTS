@@ -1,3 +1,8 @@
+# ACCESSIBLE COMPONENTS PROJECT
+
+A collection of practical, accessible-first UI components. This project serves as a living guide to implementing web accessibility, providing documented examples for developers to learn from and use.
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

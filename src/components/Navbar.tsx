@@ -4,9 +4,10 @@ import '../styles/Navbar.css';
 
 const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Gallery', href: '/gallery' },
-    { label: 'About', href: '/about' },
+    { label: 'Modal Dialog', href: '/modal-dialog' },
+    { label: 'Links VS Buttons', href: '/links-vs-buttons' },
+    { label: 'Radio Buttons', href: '/radio-buttons' },
+    { label: 'Input Fields', href: '/input-fields' },
 ];
 
 const Navbar: React.FC = () => (
