@@ -13,7 +13,7 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ links }) => (
     <footer className='footer'>
         <nav aria-label="Footer">
-            <h4 className='footer-title'>Useful Links</h4>
+            <h4 className='footer-title'>Useful Links:</h4>
             <ul className='footer-links'>
                 {links.map((link, idx) => (
                     <li key={idx}>

@@ -19,14 +19,22 @@
 .footer-links {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
+    flex-direction: column;
+    gap: 0.5rem 0.5rem;
 }
 
 .footer-links li {
     margin: 0; /* Reset margin, use gap instead */
+}
+
+.footer-links li::before {
+    content: "• ";
+    color: #495057;
+    font-weight: bold;
+    margin-right: 0.5rem;
 }
 
 /* Footer link styling with accessibility features */
@@ -84,6 +92,10 @@
         color: #000000;
         border-top-color: #000000;
         border-top-width: 2px;
+    }
+    
+    .footer-links li::before {
+        color: #000000;
     }
     
     .footer a,

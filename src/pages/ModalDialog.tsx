@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/ModalDialog.css';
 import { InformationModal } from '../components/InformationModal';
 import { NativeAlertDialog } from '../components/NativeAlertDialog';
-import CodeExample from '../components/CodeExampleLazy';
+import CodeExample from '../components/CodeExample';
 import alertDialogLogicCode from '../code-example/alert-dialog-logic.txt?raw';
 import informationalDialogLogicCode from '../code-example/information-dialog-logic.txt?raw';
 import Footer from '../components/Footer';
@@ -22,8 +22,8 @@ export const ModalDialog: React.FC = () => {
                 <div className="modal-example-right">
                     <div className="code-example-title">Code Example</div>
                     <p>React implementation with useState and custom focus trapping logic.</p>
-                    <CodeExample 
-                        code={informationalDialogLogicCode} 
+                    <CodeExample
+                        code={informationalDialogLogicCode}
                         title="React Information Modal Code"
                         language="tsx"
                     />
@@ -40,14 +40,17 @@ export const ModalDialog: React.FC = () => {
                 <div className="modal-example-right">
                     <div className="code-example-title">Code Example</div>
                     <p>Native HTML dialog implementation with showModal() and automatic focus management.</p>
-                    <CodeExample 
-                        code={alertDialogLogicCode} 
+                    <CodeExample
+                        code={alertDialogLogicCode}
                         title="Native HTML Dialog Code"
                         language="tsx"
                     />
                 </div>
             </div>
-            <Footer links={[{ label: "The Dialog element", url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" }]} />
+            <Footer links={[{ label: "W3C Modal Dialog Example", url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/" },
+            { label: "Modal dialog from atomica11y.", url: "https://www.atomica11y.com/demos/dialog-modal/" },
+            { label: "MDN Web Docs: Dialog", url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" },
+            { label: "Focus trap React library", url: "https://github.com/focus-trap/focus-trap-react" }]} />
         </main>
     );
 };
