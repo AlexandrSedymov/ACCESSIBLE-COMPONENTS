@@ -6,7 +6,34 @@
 
 .modal-example {
     margin: 2rem auto;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.modal-example-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-example-right {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 200px;
+}
+
+.code-example-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
 }
 
 .modal-page-title {
@@ -47,6 +74,54 @@
     min-width: 300px;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Icon Styling */
+.modal-close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    color: #6c757d;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-icon:hover {
+    background: #f8f9fa;
+    color: #495057;
+    transform: scale(1.1);
+}
+
+.modal-close-icon:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    background: #f8f9fa;
+    color: #495057;
+}
+
+.modal-close-icon:active {
+    transform: scale(0.95);
+    background: #e9ecef;
+}
+
+/* Simple Modal Actions */
+.simple-modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .modal-title {
@@ -99,6 +174,36 @@
 .modal-close-button:focus {
     outline: 2px solid #545b62;
     outline-offset: 2px;
+}
+
+/* Modal Cancel Button (specific styling for simple modal) */
+.modal-cancel-button {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.modal-cancel-button:hover {
+    background: #545b62;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.modal-cancel-button:focus {
+    outline: 3px solid rgba(108, 117, 125, 0.5);
+    outline-offset: 2px;
+}
+
+.modal-cancel-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
 }
 
 /* Login Modal Specific Styles */
@@ -200,7 +305,157 @@
     cursor: not-allowed;
 }
 
+/* Alert Dialog Specific Styles */
+.alert-button {
+    background: #dc3545;
+}
+
+.alert-button:hover {
+    background: #c82333;
+}
+
+.alert-button:focus {
+    outline: 2px solid #c82333;
+    outline-offset: 2px;
+}
+
+.alert-backdrop {
+    background: rgba(220, 53, 69, 0.15); /* Red tinted backdrop */
+}
+
+.alert-dialog-content {
+    min-width: 400px;
+    max-width: 500px;
+    text-align: center;
+    border-top: 4px solid #dc3545;
+}
+
+.alert-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.alert-title {
+    color: #dc3545;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.alert-description {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.alert-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.alert-confirm-button {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.alert-confirm-button:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.alert-confirm-button:focus {
+    outline: 3px solid rgba(220, 53, 69, 0.5);
+    outline-offset: 2px;
+}
+
+.alert-confirm-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.alert-cancel-button {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.alert-cancel-button:hover {
+    background: #545b62;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.alert-cancel-button:focus {
+    outline: 3px solid rgba(108, 117, 125, 0.5);
+    outline-offset: 2px;
+}
+
+.alert-cancel-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+}
+
+/* Native Dialog Styles */
+.native-alert-dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.native-alert-dialog::backdrop {
+    background: rgba(220, 53, 69, 0.15);
+    backdrop-filter: blur(2px);
+}
+
+.native-alert-dialog[open] {
+    animation: dialogFadeIn 0.3s ease-out;
+}
+
+@keyframes dialogFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 /* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-example {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .modal-example-right {
+        order: -1; /* Put code example on top on mobile */
+    }
+}
+
 @media (max-width: 480px) {
     .modal-content {
         margin: 1rem;
@@ -211,6 +466,32 @@
     .login-modal-content {
         min-width: auto;
         max-width: calc(100vw - 2rem);
+    }
+    
+    .alert-dialog-content {
+        min-width: auto;
+        max-width: calc(100vw - 2rem);
+        margin: 1rem;
+    }
+    
+    .alert-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .alert-actions button {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .simple-modal-actions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+    
+    .simple-modal-actions button {
+        width: 100%;
+        margin: 0;
     }
     
     .form-actions {

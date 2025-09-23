@@ -1,174 +1,40 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import '../styles/ModalDialog.css';
+import { InformationModal } from '../components/InformationModal';
+import { NativeAlertDialog } from '../components/NativeAlertDialog';
+import CodeExample from '../components/CodeExample';
 
 export const ModalDialog: React.FC = () => {
-    const [isSimpleModalOpen, setIsSimpleModalOpen] = useState(false);
-    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-    const simpleModalCloseButtonRef = useRef<HTMLButtonElement>(null);
-    const loginModalUsernameRef = useRef<HTMLInputElement>(null);
-
-    const openSimpleModal = () => setIsSimpleModalOpen(true);
-    const closeSimpleModal = () => setIsSimpleModalOpen(false);
-    
-    const openLoginModal = () => setIsLoginModalOpen(true);
-    const closeLoginModal = () => setIsLoginModalOpen(false);
-
-    const handleLoginSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle login logic here
-        closeLoginModal();
-    };
-
-    // Trap focus inside simple modal when open
-    React.useEffect(() => {
-        if (isSimpleModalOpen && simpleModalCloseButtonRef.current) {
-            simpleModalCloseButtonRef.current.focus();
-        }
-    }, [isSimpleModalOpen]);
-
-    // Trap focus inside login modal when open
-    React.useEffect(() => {
-        if (isLoginModalOpen && loginModalUsernameRef.current) {
-            loginModalUsernameRef.current.focus();
-        }
-    }, [isLoginModalOpen]);
-
-    // Handle ESC key for both modals
-    React.useEffect(() => {
-        const handleEscapeKey = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                if (isSimpleModalOpen) {
-                    closeSimpleModal();
-                } else if (isLoginModalOpen) {
-                    closeLoginModal();
-                }
-            }
-        };
-
-        document.addEventListener('keydown', handleEscapeKey);
-        return () => document.removeEventListener('keydown', handleEscapeKey);
-    }, [isSimpleModalOpen, isLoginModalOpen]);
-
     return (
         <main id="main-content" role="main" className="modal-page">
             <h1 className="modal-page-title">Accessible Modal Dialog Examples</h1>
             
-            {/* Simple Modal Example */}
+            {/* Information Modal Example */}
             <div className="modal-example">
-                <h2>Simple Information Modal</h2>
-                <button onClick={openSimpleModal} aria-haspopup="dialog" className="modal-open-button">
-                    Open Simple Modal
-                </button>
-                {isSimpleModalOpen && (
-                    <div
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby="simple-modal-title"
-                        aria-describedby="simple-modal-description"
-                        className="modal-backdrop"
-                        tabIndex={-1}
-                        onClick={closeSimpleModal}
-                    >
-                        <div
-                            className="modal-content"
-                            onClick={e => e.stopPropagation()}
-                        >
-                            <h3 id="simple-modal-title" className="modal-title">Information Modal</h3>
-                            <p id="simple-modal-description" className="modal-description">
-                                This is a simple information modal dialog. It demonstrates basic accessibility features.
-                            </p>
-                            <button
-                                ref={simpleModalCloseButtonRef}
-                                onClick={closeSimpleModal}
-                                aria-label="Close information modal"
-                                className="modal-close-button"
-                            >
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                )}
+                <div className="modal-example-left">
+                    <h2>Information Modal</h2>
+                    <p>A React state-based modal with submit and cancel actions, close icon, and custom focus management.</p>
+                    <InformationModal />
+                </div>
+                <div className="modal-example-right">
+                    <div className="code-example-title">Code Example</div>
+                    <p>React implementation with useState and custom focus trapping logic.</p>
+                    <CodeExample code={`function greet(name) {\n  console.log(\`Hello, \${name}!\`);\n}`} />
+                </div>
             </div>
 
-            {/* Login Modal Example */}
+            {/* Native Alert Dialog Example */}
             <div className="modal-example">
-                <h2>Interactive Login Modal</h2>
-                <button onClick={openLoginModal} aria-haspopup="dialog" className="modal-open-button login-button">
-                    Open Login Modal
-                </button>
-                {isLoginModalOpen && (
-                    <div
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby="login-modal-title"
-                        aria-describedby="login-modal-description"
-                        className="modal-backdrop"
-                        tabIndex={-1}
-                        onClick={closeLoginModal}
-                    >
-                        <div
-                            className="modal-content login-modal-content"
-                            onClick={e => e.stopPropagation()}
-                        >
-                            <h3 id="login-modal-title" className="modal-title">User Login</h3>
-                            <p id="login-modal-description" className="modal-description">
-                                Please enter your credentials to log in.
-                            </p>
-                            <form onSubmit={handleLoginSubmit} className="login-form">
-                                <div className="form-group">
-                                    <label htmlFor="username" className="form-label">
-                                        Username <span aria-label="required" className="required">*</span>
-                                    </label>
-                                    <input
-                                        ref={loginModalUsernameRef}
-                                        type="text"
-                                        id="username"
-                                        name="username"
-                                        required
-                                        aria-required="true"
-                                        aria-describedby="username-error"
-                                        className="form-input"
-                                        placeholder="Enter your username"
-                                    />
-                                    <div id="username-error" className="error-message" aria-live="polite"></div>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password" className="form-label">
-                                        Password <span aria-label="required" className="required">*</span>
-                                    </label>
-                                    <input
-                                        type="password"
-                                        id="password"
-                                        name="password"
-                                        required
-                                        aria-required="true"
-                                        aria-describedby="password-error"
-                                        className="form-input"
-                                        placeholder="Enter your password"
-                                    />
-                                    <div id="password-error" className="error-message" aria-live="polite"></div>
-                                </div>
-                                <div className="form-actions">
-                                    <button
-                                        type="submit"
-                                        className="modal-submit-button"
-                                        aria-describedby="login-modal-description"
-                                    >
-                                        Log In
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={closeLoginModal}
-                                        aria-label="Cancel login and close modal"
-                                        className="modal-close-button"
-                                    >
-                                        Cancel
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                )}
+                <div className="modal-example-left">
+                    <h2>Native Alert Dialog</h2>
+                    <p>Uses the HTML5 &lt;dialog&gt; element with .showModal() method for native browser modal behavior.</p>
+                    <NativeAlertDialog />
+                </div>
+                <div className="modal-example-right">
+                    <div className="code-example-title">Code Example</div>
+                    <p>Native HTML dialog implementation with showModal() and automatic focus management.</p>
+                    {/* Code example will be displayed here */}
+                </div>
             </div>
         </main>
     );
