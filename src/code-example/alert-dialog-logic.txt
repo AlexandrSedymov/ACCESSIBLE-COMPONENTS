@@ -1,0 +1,20 @@
+const nativeDialogRef = useRef<HTMLDialogElement>(null);
+const confirmButtonRef = useRef<HTMLButtonElement>(null);
+
+const openDialog = () => {
+    if (nativeDialogRef.current) {
+        nativeDialogRef.current.showModal();
+        // Focus the confirm button after opening
+        setTimeout(() => {
+            if (confirmButtonRef.current) {
+                confirmButtonRef.current.focus();
+            }
+        }, 0);
+    }
+};
+
+const closeDialog = () => {
+    if (nativeDialogRef.current) {
+        nativeDialogRef.current.close();
+    }
+};

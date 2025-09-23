@@ -7,7 +7,7 @@
 .modal-example {
     margin: 2rem auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 50%;
     gap: 2rem;
     align-items: start;
     max-width: 1200px;
@@ -445,6 +445,16 @@
 }
 
 /* Responsive adjustments */
+
+/* Tablet styles - code example takes 90% width */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .modal-example {
+        grid-template-columns: 1fr 90%;
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile styles - single column with modal buttons on top */
 @media (max-width: 768px) {
     .modal-example {
         grid-template-columns: 1fr;
@@ -452,7 +462,12 @@
     }
     
     .modal-example-right {
-        order: -1; /* Put code example on top on mobile */
+        /* Remove order: -1 to keep code example below modal buttons */
+        width: 100%;
+    }
+    
+    .modal-page {
+        padding: 0.75rem;
     }
 }
 

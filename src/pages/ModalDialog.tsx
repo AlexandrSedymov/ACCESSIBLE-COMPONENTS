@@ -2,13 +2,16 @@ import React from "react";
 import '../styles/ModalDialog.css';
 import { InformationModal } from '../components/InformationModal';
 import { NativeAlertDialog } from '../components/NativeAlertDialog';
-import CodeExample from '../components/CodeExample';
+import CodeExample from '../components/CodeExampleLazy';
+import alertDialogLogicCode from '../code-example/alert-dialog-logic.txt?raw';
+import informationalDialogLogicCode from '../code-example/information-dialog-logic.txt?raw';
+import Footer from '../components/Footer';
 
 export const ModalDialog: React.FC = () => {
     return (
         <main id="main-content" role="main" className="modal-page">
             <h1 className="modal-page-title">Accessible Modal Dialog Examples</h1>
-            
+
             {/* Information Modal Example */}
             <div className="modal-example">
                 <div className="modal-example-left">
@@ -19,7 +22,11 @@ export const ModalDialog: React.FC = () => {
                 <div className="modal-example-right">
                     <div className="code-example-title">Code Example</div>
                     <p>React implementation with useState and custom focus trapping logic.</p>
-                    <CodeExample code={`function greet(name) {\n  console.log(\`Hello, \${name}!\`);\n}`} />
+                    <CodeExample 
+                        code={informationalDialogLogicCode} 
+                        title="React Information Modal Code"
+                        language="tsx"
+                    />
                 </div>
             </div>
 
@@ -33,9 +40,14 @@ export const ModalDialog: React.FC = () => {
                 <div className="modal-example-right">
                     <div className="code-example-title">Code Example</div>
                     <p>Native HTML dialog implementation with showModal() and automatic focus management.</p>
-                    {/* Code example will be displayed here */}
+                    <CodeExample 
+                        code={alertDialogLogicCode} 
+                        title="Native HTML Dialog Code"
+                        language="tsx"
+                    />
                 </div>
             </div>
+            <Footer links={[{ label: "The Dialog element", url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" }]} />
         </main>
     );
 };
