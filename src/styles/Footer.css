@@ -11,6 +11,13 @@
     min-height: fit-content;
 }
 
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
 /* Footer navigation styling */
 .footer nav[aria-label="Footer"] {
     width: 100%;
@@ -144,6 +151,11 @@
         flex-direction: column;
         gap: 0.75rem;
         margin-top: 0.75rem;
+    }
+    
+    .footer-links li {
+        display: flex;
+        align-items: center;
     }
     
     .footer a,
