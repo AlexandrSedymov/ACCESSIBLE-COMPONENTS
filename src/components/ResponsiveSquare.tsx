@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { clsx } from 'clsx';
 
 // Helper function to merge Tailwind classes, as per best practices
-function cn(...inputs: any[]) {
+function cn(...inputs: (string | undefined | null | boolean)[]) {
   return twMerge(clsx(inputs));
 }
 

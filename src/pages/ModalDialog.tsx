@@ -5,7 +5,7 @@ import { NativeAlertDialog } from '../components/NativeAlertDialog';
 import CodeExample from '../components/CodeExample';
 import alertDialogLogicCode from '../code-example/alert-dialog-logic.txt?raw';
 import informationalDialogLogicCode from '../code-example/information-dialog-logic.txt?raw';
-import Footer from '../components/Footer';
+import LinkSection from '../components/LinkSection';
 
 export const ModalDialog: React.FC = () => {
     return (
@@ -47,7 +47,7 @@ export const ModalDialog: React.FC = () => {
                     />
                 </div>
             </div>
-            <Footer links={[{ label: "W3C Modal Dialog Example", url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/" },
+            <LinkSection links={[{ label: "W3C Modal Dialog Example", url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/" },
             { label: "Modal dialog from atomica11y.", url: "https://www.atomica11y.com/demos/dialog-modal/" },
             { label: "MDN Web Docs: Dialog", url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" },
             { label: "Focus trap React library", url: "https://github.com/focus-trap/focus-trap-react" },

@@ -1,0 +1,26 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+coverage/
+
+# Yarn PnP files
+.yarn/
+.pnp.*
+
+# Config files (these often have different code styles)
+*.config.js
+*.config.ts
+vite.config.*
+vitest.config.*
+tailwind.config.*
+postcss.config.*
+
+# CI/CD and tooling
+.github/
+.vscode/
+
+# Generated or downloaded files
+public/
+*.d.ts
+!src/**/*.d.ts
