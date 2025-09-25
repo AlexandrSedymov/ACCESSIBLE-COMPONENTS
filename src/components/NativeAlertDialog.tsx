@@ -10,8 +10,8 @@ export const NativeAlertDialog: React.FC = () => {
       nativeDialogRef.current.showModal();
       // Focus the confirm button after opening
       setTimeout(() => {
-        if (confirmButtonRef.current) {
-          confirmButtonRef.current.focus();
+        if (nativeDialogRef.current) {
+          nativeDialogRef.current.focus();
         }
       }, 0);
     }
