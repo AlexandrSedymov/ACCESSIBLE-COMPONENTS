@@ -98,7 +98,7 @@ export const InformationModal: React.FC = () => {
                     tabIndex={-1}
                     onClick={closeModal}
                 >
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                    <div className="modal-content">
                         {/* Close Icon */}
                         <button 
                             onClick={closeModal}

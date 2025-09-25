@@ -13,9 +13,9 @@ type LinkSectionProps = {
 const LinkSection: React.FC<LinkSectionProps> = ({ links }) => (
     <section className='link-section' aria-labelledby='link-section-title'>
         <nav aria-label="Useful Links">
-            <h4 id='link-section-title' className='link-section-title'>
+            <h2 id='link-section-title' className='link-section-title'>
                 Useful Links:
-            </h4>
+            </h2>
             <ul className='link-section-links'>
                 {links.map((link, idx) => (
                     <li key={idx}>
