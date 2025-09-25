@@ -7,12 +7,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center horizontally */
-  align-items: center;    /* Center vertically */
-  min-height: 100vh;      /* Ensure body takes at least the full viewport height */
-  height: 100vh;          /* Ensure body fills the viewport from top to bottom */
-  margin: 0;              /* Remove default body margin */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  height: 100vh; /* Ensure body fills the viewport from top to bottom */
+  margin: 0; /* Remove default body margin */
   background-color: #f7fafc; /* Optional: A light background to see the content area */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif;
 }
 
 /* Target the root div where your React app is mounted.
@@ -23,6 +32,6 @@ body {
   height: 100%;
   max-width: 1280px; /* Use a valid CSS value for max-width */
   padding: 2rem; /* Add generous padding (32px) around your content */
-  margin: 0;  /* Remove margin so #root fills the flex container */
+  margin: 0; /* Remove margin so #root fills the flex container */
   box-sizing: border-box;
 }

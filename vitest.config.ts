@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
   plugins: [react()],
@@ -10,6 +10,6 @@ export default defineConfig({
     setupFiles: ['./src/test-setup.ts'],
     css: true,
     // Exclude e2e tests if you add them later
-    exclude: ['**/node_modules/**', '**/e2e/**']
+    exclude: ['**/node_modules/**', '**/e2e/**'],
   },
-})
+});

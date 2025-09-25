@@ -1,10 +1,11 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import globals from 'globals';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import tseslint from 'typescript-eslint';
+import prettierConfig from 'eslint-config-prettier';
 
 export default tseslint.config([
   // Global ignores - these files/folders will be completely ignored by ESLint
@@ -24,16 +25,13 @@ export default tseslint.config([
       'postcss.config.*',
       '.github/**/*',
       'public/**/*',
-    ]
+    ],
   },
 
   // TypeScript and React configuration
   {
     files: ['src/**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-    ],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -62,14 +60,20 @@ export default tseslint.config([
     },
     rules: {
       // TypeScript rules
-      '@typescript-eslint/no-unused-vars': ['error', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        ignoreRestSiblings: true 
-      }],
-      '@typescript-eslint/no-explicit-any': ['error', {
-        ignoreRestArgs: true,
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+      '@typescript-eslint/no-explicit-any': [
+        'error',
+        {
+          ignoreRestArgs: true,
+        },
+      ],
       '@typescript-eslint/prefer-nullish-coalescing': 'off', // Can be strict
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/no-unnecessary-type-assertion': 'error',
@@ -90,20 +94,23 @@ export default tseslint.config([
       ...reactHooks.configs.recommended.rules,
 
       // React Refresh rules
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
       // Accessibility rules (jsx-a11y) - Essential for your accessibility project!
-      'jsx-a11y/alt-text': ['error', {
-        elements: ['img', 'object', 'area', 'input[type="image"]'],
-      }],
+      'jsx-a11y/alt-text': [
+        'error',
+        {
+          elements: ['img', 'object', 'area', 'input[type="image"]'],
+        },
+      ],
       'jsx-a11y/anchor-has-content': 'error',
-      'jsx-a11y/anchor-is-valid': ['error', {
-        components: ['Link'],
-        specialLink: ['to'],
-      }],
+      'jsx-a11y/anchor-is-valid': [
+        'error',
+        {
+          components: ['Link'],
+          specialLink: ['to'],
+        },
+      ],
       'jsx-a11y/aria-props': 'error',
       'jsx-a11y/aria-proptypes': 'error',
       'jsx-a11y/aria-unsupported-elements': 'error',
@@ -123,12 +130,15 @@ export default tseslint.config([
       'no-var': 'error',
       'object-shorthand': 'error',
       'prefer-template': 'error',
-      
+
       // Import organization
-      'sort-imports': ['error', {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-      }],
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: true,
+          ignoreDeclarationSort: true,
+        },
+      ],
     },
   },
 
@@ -138,7 +148,7 @@ export default tseslint.config([
       'src/**/*.test.{ts,tsx}',
       'src/**/__tests__/**/*.{ts,tsx}',
       'src/test-setup.ts',
-      'src/utils/test-*.ts'
+      'src/utils/test-*.ts',
     ],
     rules: {
       // Allow more flexibility in tests
@@ -149,7 +159,7 @@ export default tseslint.config([
       'no-console': 'off',
       'jsx-a11y/click-events-have-key-events': 'off',
       'jsx-a11y/no-static-element-interactions': 'off',
-      
+
       // Test-specific recommendations
       'prefer-const': 'error',
       'no-var': 'error',
@@ -169,4 +179,7 @@ export default tseslint.config([
       'no-console': 'off',
     },
   },
-])
+
+  // Prettier configuration - must be last to override formatting rules
+  prettierConfig,
+]);

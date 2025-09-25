@@ -37,10 +37,7 @@ export const ResponsiveSquare = ({ children, className }: ResponsiveSquareProps)
         className // Allow for custom classes to be passed in
       )}
     >
-      <div className="text-center text-gray-800 dark:text-gray-200">
-        {children}
-      </div>
+      <div className="text-center text-gray-800 dark:text-gray-200">{children}</div>
     </div>
   );
 };
-

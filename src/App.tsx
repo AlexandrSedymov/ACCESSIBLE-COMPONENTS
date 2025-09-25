@@ -13,7 +13,9 @@ import { InputFieldPage } from './pages/InputField';
 function App() {
   return (
     <BrowserRouter>
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,7 +25,7 @@ function App() {
         <Route path="/input-fields" element={<InputFieldPage />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
