@@ -4,14 +4,15 @@ import '../styles/ModalDialog.css';
 export const NativeAlertDialog: React.FC = () => {
   const nativeDialogRef = useRef<HTMLDialogElement>(null);
   const confirmButtonRef = useRef<HTMLButtonElement>(null);
+  const alertTitleRef = useRef<HTMLHeadingElement>(null);
 
   const openDialog = () => {
     if (nativeDialogRef.current) {
       nativeDialogRef.current.showModal();
-      // Focus the confirm button after opening
+      // Focus the alert title for screen reader announcement
       setTimeout(() => {
-        if (nativeDialogRef.current) {
-          nativeDialogRef.current.focus();
+        if (alertTitleRef.current) {
+          alertTitleRef.current.focus();
         }
       }, 0);
     }
@@ -49,7 +50,12 @@ export const NativeAlertDialog: React.FC = () => {
           <div className="alert-icon" aria-hidden="true">
             ⚠️
           </div>
-          <h2 id="native-alert-title" className="modal-title alert-title">
+          <h2
+            ref={alertTitleRef}
+            id="native-alert-title"
+            className="modal-title alert-title"
+            tabIndex={-1}
+          >
             Confirm Action (Native Dialog)
           </h2>
           <p id="native-alert-description" className="modal-description alert-description">

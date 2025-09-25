@@ -10,6 +10,7 @@ export const InformationModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const modalTitleRef = useRef<HTMLHeadingElement>(null);
   const triggerButtonRef = useRef<HTMLButtonElement>(null);
 
   const openModal = () => setIsOpen(true);
@@ -29,10 +30,10 @@ export const InformationModal: React.FC = () => {
     closeModal();
   };
 
-  // Set initial focus when modal opens
+  // Set initial focus when modal opens - focus the title for screen readers
   useEffect(() => {
-    if (isOpen && modalRef.current) {
-      modalRef.current.focus();
+    if (isOpen && modalTitleRef.current) {
+      modalTitleRef.current.focus();
     }
   }, [isOpen]);
 
@@ -98,7 +99,6 @@ export const InformationModal: React.FC = () => {
           aria-describedby="information-modal-description"
           className="modal-backdrop"
           tabIndex={-1}
-          onClick={closeModal}
         >
           <div className="modal-content">
             {/* Close Icon */}
@@ -111,7 +111,12 @@ export const InformationModal: React.FC = () => {
               <span aria-hidden="true">×</span>
             </button>
 
-            <h2 id="information-modal-title" className="modal-title">
+            <h2
+              ref={modalTitleRef}
+              id="information-modal-title"
+              className="modal-title"
+              tabIndex={-1}
+            >
               Confirmation Required
             </h2>
             <p id="information-modal-description" className="modal-description">
