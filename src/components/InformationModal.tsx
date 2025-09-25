@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/ModalDialog.css';
 
+// React way of creating a modal dialog with focus management and accessibility features
 // Selector for all focusable elements
 const FOCUSABLE_SELECTOR =
   'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -30,8 +31,8 @@ export const InformationModal: React.FC = () => {
 
   // Set initial focus when modal opens
   useEffect(() => {
-    if (isOpen && closeButtonRef.current) {
-      closeButtonRef.current.focus();
+    if (isOpen && modalRef.current) {
+      modalRef.current.focus();
     }
   }, [isOpen]);
 
@@ -110,9 +111,9 @@ export const InformationModal: React.FC = () => {
               <span aria-hidden="true">×</span>
             </button>
 
-            <h3 id="information-modal-title" className="modal-title">
+            <h2 id="information-modal-title" className="modal-title">
               Confirmation Required
-            </h3>
+            </h2>
             <p id="information-modal-description" className="modal-description">
               Please confirm that you want to proceed with this action. This will save your changes
               and continue.

@@ -49,9 +49,9 @@ export const NativeAlertDialog: React.FC = () => {
           <div className="alert-icon" aria-hidden="true">
             ⚠️
           </div>
-          <h3 id="native-alert-title" className="modal-title alert-title">
+          <h2 id="native-alert-title" className="modal-title alert-title">
             Confirm Action (Native Dialog)
-          </h3>
+          </h2>
           <p id="native-alert-description" className="modal-description alert-description">
             Are you sure you want to delete this item? This action cannot be undone. This dialog
             uses the native HTML &lt;dialog&gt; element with .showModal().
