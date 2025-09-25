@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import '../styles/ModalDialog.css';
 
 // Selector for all focusable elements
@@ -39,7 +39,7 @@ export const InformationModal: React.FC = () => {
         if (!isOpen || !modalRef.current) return;
 
         const modalElement = modalRef.current;
-        const focusableElements = Array.from(modalElement.querySelectorAll(FOCUSABLE_SELECTOR)) as HTMLElement[];
+        const focusableElements = Array.from(modalElement.querySelectorAll(FOCUSABLE_SELECTOR));
         if (focusableElements.length === 0) return;
 
         const firstElement = focusableElements[0];
@@ -50,12 +50,12 @@ export const InformationModal: React.FC = () => {
 
             if (event.shiftKey) {
                 if (document.activeElement === firstElement) {
-                    lastElement.focus();
+                    (lastElement as HTMLElement).focus();
                     event.preventDefault();
                 }
             } else {
                 if (document.activeElement === lastElement) {
-                    firstElement.focus();
+                    (firstElement as HTMLElement).focus();
                     event.preventDefault();
                 }
             }

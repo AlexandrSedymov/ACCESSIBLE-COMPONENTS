@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/ModalDialog.css';
 
 // Selector for all focusable elements
@@ -30,11 +30,11 @@ export const InputFieldPage: React.FC = () => {
         if (!isLoginModalOpen || !loginModalRef.current) return;
 
         const modalElement = loginModalRef.current;
-        const focusableElements = Array.from(modalElement.querySelectorAll(FOCUSABLE_SELECTOR)) as HTMLElement[];
+        const focusableElements = Array.from(modalElement.querySelectorAll(FOCUSABLE_SELECTOR));
         if (focusableElements.length === 0) return;
 
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
 
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key !== 'Tab') return;
@@ -142,7 +142,7 @@ export const InputFieldPage: React.FC = () => {
                                        className="form-input"
                                        placeholder="Enter your username"
                                    />
-                                   <div id="modal-username-error" className="error-message" aria-live="polite"></div>
+                                   <div id="modal-username-error" className="error-message" aria-live="polite" />
                                </div>
                                <div className="form-group">
                                    <label htmlFor="modal-password" className="form-label">
@@ -158,7 +158,7 @@ export const InputFieldPage: React.FC = () => {
                                        className="form-input"
                                        placeholder="Enter your password"
                                    />
-                                   <div id="modal-password-error" className="error-message" aria-live="polite"></div>
+                                   <div id="modal-password-error" className="error-message" aria-live="polite" />
                                </div>
                                <div className="form-actions">
                                    <button 

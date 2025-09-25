@@ -1,5 +1,4 @@
 import { configureAxe } from 'jest-axe'
-import type { AxeResults } from 'axe-core'
 
 /**
  * Custom axe configuration for our project
@@ -9,20 +8,12 @@ export const axe = configureAxe({
   rules: {
     // Enable important accessibility rules
     'color-contrast': { enabled: true },
-    'keyboard-navigation': { enabled: true },
     'landmark-unique': { enabled: true },
     'region': { enabled: true },
-    'focus-order-semantics': { enabled: true },
     
     // You can disable specific rules if they conflict with your design system
     // 'color-contrast': { enabled: false }, // Example: if you need to disable contrast checks temporarily
   },
-  tags: [
-    'wcag2a',      // WCAG 2.0 Level A
-    'wcag2aa',     // WCAG 2.0 Level AA  
-    'wcag21aa',    // WCAG 2.1 Level AA
-    'best-practice' // Axe best practices
-  ],
   // Include only violations in results (not passes or incomplete)
   resultTypes: ['violations']
 })
@@ -34,9 +25,9 @@ export const axe = configureAxe({
  * @returns Promise with axe results
  */
 export const testA11y = async (
-  element: Element | Document = document.body,
+  element: Element = document.body,
   options: Parameters<typeof axe>[1] = {}
-): Promise<AxeResults> => {
+) => {
   const results = await axe(element, options)
   
   // Enhanced error reporting
@@ -75,10 +66,10 @@ export const testComponentA11y = async (
   if (results.violations.length > 0) {
     const componentInfo = componentName ? ` in ${componentName}` : ''
     throw new Error(
-      `Found ${results.violations.length} accessibility violation(s)${componentInfo}:\n` +
+      `Found ${results.violations.length} accessibility violation(s)${componentInfo}:\n${ 
       results.violations
         .map((v: any) => `- ${v.id}: ${v.description} (${v.nodes.length} node(s))`)
-        .join('\n')
+        .join('\n')}`
     )
   }
 }

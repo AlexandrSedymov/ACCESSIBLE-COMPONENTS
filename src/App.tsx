@@ -3,7 +3,7 @@ import './styles/SkipLink.css';
 
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ModalDialog } from './pages/ModalDialog';
 import { LinksVsButtons } from './pages/LinksVsButtons';

@@ -1,8 +1,8 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { InformationModal } from '../InformationModal'
-import { testComponentA11y, testKeyboardNavigation, testAriaLabels } from '../../utils/test-accessibility'
+import { testAriaLabels, testComponentA11y, testKeyboardNavigation } from '../../utils/test-accessibility'
 
 describe('InformationModal Accessibility', () => {
   beforeEach(() => {
