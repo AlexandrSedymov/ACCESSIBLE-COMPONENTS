@@ -9,13 +9,12 @@ A comprehensive collection of **accessibility-first React components** built wit
 
 ## ✨ Features
 
-- 🔍 **Accessibility-First**: Every component meets WCAG 2.1 AA standards
+- 🔍 **Accessibility-First**: Every component meets WCAG 2.1 AA standards (WIP)
 - 🧪 **Automated Testing**: Comprehensive test suite with axe-core integration
 - 📱 **Responsive Design**: Mobile-first approach with all screen sizes supported
 - 🎨 **Modern Stack**: React 19, TypeScript 5.8, Vite 7.1
 - 🛠️ **Developer Experience**: ESLint, Prettier, and comprehensive tooling
 - 📖 **Living Documentation**: Interactive examples with code snippets
-- ⚡ **Performance Optimized**: Fast builds and optimal bundle sizes
 
 ## 🚀 Quick Start
 
@@ -66,28 +65,6 @@ src/
 └── __tests__/           # Comprehensive test suites
 ```
 
-## 🧩 Available Components
-
-### Modal Dialogs
-
-- **InformationModal**: Custom React modal with full accessibility support
-- **NativeAlertDialog**: HTML5 `<dialog>` element implementation
-
-### Form Elements
-
-- **Accessible Input Fields**: Proper labeling, validation, and error handling
-- **Radio Button Groups**: Keyboard navigation and screen reader support
-
-### Navigation
-
-- **Semantic Links vs Buttons**: Proper usage examples and implementations
-- **Responsive Navigation**: Mobile-first navigation patterns
-
-### Layout Helpers
-
-- **ResponsiveSquare**: Accessible responsive design patterns
-- **CodeExample**: Interactive code display with syntax highlighting
-
 ## 🧪 Testing & Quality Assurance
 
 ### Accessibility Testing
@@ -122,42 +99,6 @@ yarn format
 yarn validate
 ```
 
-### Automated Testing Features
-
-- **axe-core Integration**: Automated accessibility violation detection
-- **Screen Reader Testing**: Focus management and ARIA compliance validation
-- **Keyboard Navigation**: Tab order and keyboard interaction testing
-- **Visual Regression**: Consistent UI rendering across browsers
-
-## 🎯 Accessibility Standards
-
-This project implements and demonstrates:
-
-### WCAG 2.1 AA Compliance
-
-- ✅ **1.4.3 Contrast (Minimum)**: 4.5:1 contrast ratio for normal text
-- ✅ **2.1.1 Keyboard**: All functionality available via keyboard
-- ✅ **2.1.2 No Keyboard Trap**: Users can navigate away using keyboard
-- ✅ **2.4.3 Focus Order**: Logical focus sequence
-- ✅ **2.4.7 Focus Visible**: Clear focus indicators
-- ✅ **3.2.2 On Input**: No unexpected context changes
-- ✅ **4.1.2 Name, Role, Value**: Proper ARIA implementation
-
-### Screen Reader Support
-
-- Proper heading hierarchy (h1-h6)
-- Descriptive link text and button labels
-- ARIA labels and descriptions
-- Live regions for dynamic content
-- Skip links for navigation
-
-### Keyboard Navigation
-
-- Tab order management
-- Focus trapping in modals
-- Escape key handling
-- Arrow key navigation where appropriate
-
 ## 🛠️ Development Scripts
 
 | Command           | Description                                    |
@@ -180,28 +121,6 @@ Each component includes:
 - **Live Examples**: Interactive demonstrations
 - **Code Snippets**: Copy-paste ready implementations
 - **Accessibility Notes**: Specific compliance details
-- **Browser Support**: Compatibility information
-- **Usage Guidelines**: Best practices and common patterns
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-component`
-3. Make your changes following accessibility best practices
-4. Add tests for new components
-5. Run validation: `yarn validate`
-6. Submit a pull request
-
-## 📋 Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
 
 ## 📄 License
 
@@ -218,7 +137,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/)
 - Accessibility testing powered by [axe-core](https://github.com/dequelabs/axe-core)
-- Design inspired by accessibility-first principles
 
 ---
 
