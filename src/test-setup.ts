@@ -2,6 +2,9 @@ import '@testing-library/jest-dom';
 import 'jest-axe/extend-expect';
 import { vi } from 'vitest';
 
+// Import dialog polyfill for JSDOM compatibility
+import './utils/dialog-polyfill';
+
 // Mock window.matchMedia for responsive design tests
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

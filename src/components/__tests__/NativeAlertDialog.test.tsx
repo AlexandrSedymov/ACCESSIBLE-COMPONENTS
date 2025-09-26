@@ -23,7 +23,7 @@ describe('NativeAlertDialog Accessibility', () => {
     const { container } = render(<NativeAlertDialog />);
 
     // Open the dialog
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     // Wait for dialog to be open
@@ -38,7 +38,7 @@ describe('NativeAlertDialog Accessibility', () => {
     render(<NativeAlertDialog />);
 
     // Test trigger button
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     expect(openButton).toBeInTheDocument();
 
     // Open dialog
@@ -57,7 +57,7 @@ describe('NativeAlertDialog Accessibility', () => {
     render(<NativeAlertDialog />);
 
     // Open dialog
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     const dialog = screen.getByRole('dialog');
@@ -66,17 +66,17 @@ describe('NativeAlertDialog Accessibility', () => {
     // Test dialog title
     const title = screen.getByRole('heading', { level: 2 });
     expect(title).toBeInTheDocument();
-    expect(title).toHaveTextContent('Alert Dialog');
+    expect(title).toHaveTextContent('Confirm Action (Native Dialog)');
 
     // Test close button
-    const closeButton = screen.getByRole('button', { name: /close dialog/i });
+    const closeButton = screen.getByRole('button', { name: /cancel deletion/i });
     expect(closeButton).toBeInTheDocument();
   });
 
   it('should manage focus with native browser behavior', async () => {
     render(<NativeAlertDialog />);
 
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
 
     // Open dialog
     await userEvent.click(openButton);
@@ -87,9 +87,9 @@ describe('NativeAlertDialog Accessibility', () => {
       expect(dialog).toBeInTheDocument();
     });
 
-    // Close dialog
-    const closeButton = screen.getByRole('button', { name: /close dialog/i });
-    await userEvent.click(closeButton);
+    // Close dialog using cancel button
+    const cancelButton = screen.getByRole('button', { name: /cancel deletion/i });
+    await userEvent.click(cancelButton);
 
     // Native dialog should restore focus automatically
     await waitFor(() => {
@@ -101,7 +101,7 @@ describe('NativeAlertDialog Accessibility', () => {
     render(<NativeAlertDialog />);
 
     // Open dialog
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     // Verify dialog is open
@@ -125,7 +125,7 @@ describe('NativeAlertDialog Accessibility', () => {
     await testKeyboardNavigation(container);
 
     // Open dialog and test keyboard navigation
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     await waitFor(() => {
@@ -144,7 +144,7 @@ describe('NativeAlertDialog Accessibility', () => {
     testAriaLabels(container);
 
     // Open dialog and test ARIA labels
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     await waitFor(() => {
@@ -159,7 +159,7 @@ describe('NativeAlertDialog Accessibility', () => {
     render(<NativeAlertDialog />);
 
     // Open dialog
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     const dialog = screen.getByRole('dialog');
@@ -175,7 +175,7 @@ describe('NativeAlertDialog Accessibility', () => {
   it('should handle multiple open/close cycles', async () => {
     render(<NativeAlertDialog />);
 
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
 
     // Test multiple open/close cycles for stability
     for (let i = 0; i < 3; i++) {
@@ -186,7 +186,7 @@ describe('NativeAlertDialog Accessibility', () => {
       });
 
       // Close
-      const closeButton = screen.getByRole('button', { name: /close dialog/i });
+      const closeButton = screen.getByRole('button', { name: /cancel deletion/i });
       await userEvent.click(closeButton);
       await waitFor(() => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -201,14 +201,14 @@ describe('NativeAlertDialog Accessibility', () => {
     await testComponentA11y(container, 'NativeAlertDialog initial');
 
     // Open, close, and test again
-    const openButton = screen.getByRole('button', { name: /open native dialog/i });
+    const openButton = screen.getByRole('button', { name: /open native alert dialog/i });
     await userEvent.click(openButton);
 
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
     });
 
-    const closeButton = screen.getByRole('button', { name: /close dialog/i });
+    const closeButton = screen.getByRole('button', { name: /cancel deletion/i });
     await userEvent.click(closeButton);
 
     await waitFor(() => {

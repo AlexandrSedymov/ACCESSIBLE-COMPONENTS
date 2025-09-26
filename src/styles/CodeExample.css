@@ -78,6 +78,14 @@
   border-radius: 0 0 7px 7px;
   overflow-x: auto !important;
   max-width: 100% !important;
+  background: #f8f9fa;
+  padding: 16px;
+  font-family: Monaco, "Menlo", "Ubuntu Mono", Consolas, "Courier New", monospace;
+  font-size: 13px;
+  overflow: auto;
+  color: #333;
+  border: 1px solid #e9ecef;
+  border-top: none;
 }
 
 /* Responsive adjustments */

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { InformationModal } from '../InformationModal';
@@ -53,12 +53,12 @@ describe('InformationModal Accessibility', () => {
     // Test modal title
     const title = screen.getByRole('heading', { level: 2 });
     expect(title).toBeInTheDocument();
-    expect(title).toHaveTextContent('Information Modal');
+    expect(title).toHaveTextContent('Confirmation Required');
 
-    // Test close button
-    const closeButton = screen.getByRole('button', { name: /close/i });
+    // Test close button - specifically the X button, not the cancel button
+    const closeButton = screen.getByRole('button', { name: /close modal/i });
     expect(closeButton).toBeInTheDocument();
-    expect(closeButton).toHaveAttribute('aria-label', 'Close');
+    expect(closeButton).toHaveAttribute('aria-label', 'Close modal');
   });
 
   it('should manage focus properly', async () => {
@@ -72,10 +72,10 @@ describe('InformationModal Accessibility', () => {
     // Open modal
     await userEvent.click(openButton);
 
-    // Focus should move to close button when modal opens
+    // Focus should move to modal title when modal opens (our implementation focuses title first)
     await waitFor(() => {
-      const closeButton = screen.getByRole('button', { name: /close/i });
-      expect(document.activeElement).toBe(closeButton);
+      const modalTitle = screen.getByRole('heading', { level: 2 });
+      expect(document.activeElement).toBe(modalTitle);
     });
 
     // Close modal and verify focus returns to trigger
@@ -108,7 +108,7 @@ describe('InformationModal Accessibility', () => {
     expect(focusableElements.length).toBeGreaterThan(0);
 
     // Test that we can tab through modal elements
-    const closeButton = screen.getByRole('button', { name: /close/i });
+    const closeButton = screen.getByRole('button', { name: /close modal/i });
     const submitButton = screen.getByRole('button', { name: /submit/i });
 
     expect(closeButton).toBeInTheDocument();
@@ -153,16 +153,14 @@ describe('InformationModal Accessibility', () => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
     });
 
-    // Click on backdrop (modal overlay)
-    const modalOverlay = screen.getByRole('dialog').parentElement;
-    if (modalOverlay) {
-      fireEvent.click(modalOverlay);
+    // Click on backdrop (the dialog itself, not the modal content)
+    const modalBackdrop = screen.getByRole('dialog');
+    await userEvent.click(modalBackdrop);
 
-      // Verify modal is closed
-      await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-      });
-    }
+    // Verify modal is closed
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('should support keyboard navigation', async () => {
@@ -247,7 +245,7 @@ describe('InformationModal Accessibility', () => {
     expect(titleId).toBeTruthy();
 
     const title = document.getElementById(titleId!);
-    expect(title).toHaveTextContent('Information Modal');
+    expect(title).toHaveTextContent('Confirmation Required');
 
     // Verify aria-describedby points to description
     const descriptionId = dialog.getAttribute('aria-describedby');

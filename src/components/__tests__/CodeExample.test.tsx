@@ -28,8 +28,9 @@ describe('CodeExample Accessibility', () => {
     );
 
     // Expand the code example
-    const summary = screen.getByRole('button', { name: /sample react component/i });
-    await userEvent.click(summary);
+    const summary = screen.getByText('Sample React Component').closest('summary');
+    expect(summary).toBeInTheDocument();
+    await userEvent.click(summary!);
 
     await waitFor(() => {
       expect(screen.getByText(/function HelloWorld/)).toBeInTheDocument();

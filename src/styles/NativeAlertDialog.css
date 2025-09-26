@@ -19,47 +19,61 @@
   border: none;
   border-radius: 8px;
   padding: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   max-width: 90vw;
   max-height: 90vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   margin: auto;
+  position: relative;
 }
 
 .native-alert-dialog::backdrop {
-  background: rgba(52, 58, 64, 0.6); /* Neutral dark backdrop */
+  background: rgba(52, 58, 64, 0.6);
   backdrop-filter: blur(2px);
 }
 
+/* Smooth opening animation without transform conflicts */
 .native-alert-dialog[open] {
-  animation: dialogFadeIn 0.3s ease-out;
+  animation: dialogSmoothOpen 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes dialogFadeIn {
+/* Closing animation (when supported by browser) */
+.native-alert-dialog {
+  animation: dialogSmoothClose 0.15s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes dialogSmoothOpen {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(-20px);
+    scale: 0.95;
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    scale: 1;
+  }
+}
+
+@keyframes dialogSmoothClose {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.95;
   }
 }
 
 /* Alert Dialog Content */
 .alert-dialog-content {
-  min-width: 400px;
-  max-width: 500px;
+  width: 400px;
+  max-width: calc(90vw - 2rem);
   text-align: center;
-  border-top: 4px solid #f39c12; /* Softer yellow-orange border */
-  margin: auto; /* Ensure centering */
-  position: relative;
+  border-top: 4px solid #f39c12;
   background: #fff;
   padding: 2rem;
   border-radius: 8px;
+  /* Ensure consistent sizing to prevent jumping */
+  box-sizing: border-box;
 }
 
 /* Alert Icon */
@@ -154,11 +168,32 @@
 }
 
 /* Responsive adjustments for Alert Dialog */
-@media (max-width: 480px) {
+@media (max-width: 520px) {
+  .native-alert-dialog {
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100vh - 2rem);
+  }
+  
   .alert-dialog-content {
-    min-width: auto;
-    max-width: calc(100vw - 2rem);
-    margin: 1rem;
+    width: calc(100vw - 3rem);
+    max-width: none;
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .alert-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .alert-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .alert-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .alert-actions {
@@ -169,5 +204,14 @@
   .alert-actions button {
     width: 100%;
     margin: 0;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) and (min-width: 521px) {
+  .alert-dialog-content {
+    width: 350px;
+    padding: 1.75rem;
   }
 }
