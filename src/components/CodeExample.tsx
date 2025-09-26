@@ -6,12 +6,14 @@ type CodeExampleProps = {
   language?: string;
   showLineNumbers?: boolean;
   title?: string;
+  codeTitle?: string;
   defaultOpen?: boolean;
 };
 
 const CodeExample: React.FC<CodeExampleProps> = ({
   code,
   title = 'View Code',
+  codeTitle = 'Code Example',
   defaultOpen = false,
 }) => (
   <details className="code-example-spoiler" open={defaultOpen}>
@@ -23,7 +25,7 @@ const CodeExample: React.FC<CodeExampleProps> = ({
     </summary>
     <div className="code-example-content">
       <pre>
-        <code>{code}</code>
+        <code aria-label={codeTitle}>{code}</code>
       </pre>
     </div>
   </details>

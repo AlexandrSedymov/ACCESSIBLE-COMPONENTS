@@ -21,7 +21,7 @@ A comprehensive collection of **accessibility-first React components** built wit
 
 ### Prerequisites
 
-- Node.js 20+ 
+- Node.js 20+
 - Yarn 4.10.2+
 
 ### Installation
@@ -69,18 +69,22 @@ src/
 ## 🧩 Available Components
 
 ### Modal Dialogs
+
 - **InformationModal**: Custom React modal with full accessibility support
 - **NativeAlertDialog**: HTML5 `<dialog>` element implementation
 
 ### Form Elements
+
 - **Accessible Input Fields**: Proper labeling, validation, and error handling
 - **Radio Button Groups**: Keyboard navigation and screen reader support
 
 ### Navigation
+
 - **Semantic Links vs Buttons**: Proper usage examples and implementations
 - **Responsive Navigation**: Mobile-first navigation patterns
 
 ### Layout Helpers
+
 - **ResponsiveSquare**: Accessible responsive design patterns
 - **CodeExample**: Interactive code display with syntax highlighting
 
@@ -130,6 +134,7 @@ yarn validate
 This project implements and demonstrates:
 
 ### WCAG 2.1 AA Compliance
+
 - ✅ **1.4.3 Contrast (Minimum)**: 4.5:1 contrast ratio for normal text
 - ✅ **2.1.1 Keyboard**: All functionality available via keyboard
 - ✅ **2.1.2 No Keyboard Trap**: Users can navigate away using keyboard
@@ -139,6 +144,7 @@ This project implements and demonstrates:
 - ✅ **4.1.2 Name, Role, Value**: Proper ARIA implementation
 
 ### Screen Reader Support
+
 - Proper heading hierarchy (h1-h6)
 - Descriptive link text and button labels
 - ARIA labels and descriptions
@@ -146,6 +152,7 @@ This project implements and demonstrates:
 - Skip links for navigation
 
 ### Keyboard Navigation
+
 - Tab order management
 - Focus trapping in modals
 - Escape key handling
@@ -153,22 +160,23 @@ This project implements and demonstrates:
 
 ## 🛠️ Development Scripts
 
-| Command | Description |
-|---------|-------------|
-| `yarn dev` | Start development server |
-| `yarn build` | Build for production |
-| `yarn preview` | Preview production build |
-| `yarn test` | Run test suite |
-| `yarn test:ui` | Run tests with UI |
-| `yarn lint` | Check code quality |
-| `yarn format` | Format code with Prettier |
-| `yarn type-check` | TypeScript type checking |
-| `yarn ci` | Complete CI pipeline |
-| `yarn validate` | Full validation (format + lint + test + build) |
+| Command           | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `yarn dev`        | Start development server                       |
+| `yarn build`      | Build for production                           |
+| `yarn preview`    | Preview production build                       |
+| `yarn test`       | Run test suite                                 |
+| `yarn test:ui`    | Run tests with UI                              |
+| `yarn lint`       | Check code quality                             |
+| `yarn format`     | Format code with Prettier                      |
+| `yarn type-check` | TypeScript type checking                       |
+| `yarn ci`         | Complete CI pipeline                           |
+| `yarn validate`   | Full validation (format + lint + test + build) |
 
 ## 📚 Documentation
 
 Each component includes:
+
 - **Live Examples**: Interactive demonstrations
 - **Code Snippets**: Copy-paste ready implementations
 - **Accessibility Notes**: Specific compliance details
