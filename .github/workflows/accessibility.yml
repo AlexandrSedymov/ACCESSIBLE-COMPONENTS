@@ -24,6 +24,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -60,6 +63,9 @@ jobs:
           node-version: '22.x'
           cache: 'yarn'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -68,7 +74,7 @@ jobs:
 
       - name: Serve application
         run: |
-          yarn global add serve
+          npm install -g serve
           serve -s dist -l 3000 &
           sleep 5
 
