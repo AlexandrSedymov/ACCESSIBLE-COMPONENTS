@@ -56,11 +56,10 @@ export const NativeAlertDialog: React.FC = () => {
             className="modal-title alert-title"
             tabIndex={-1}
           >
-            Confirm Action (Native Dialog)
+            Confirm Action
           </h2>
           <p id="native-alert-description" className="modal-description alert-description">
-            Are you sure you want to delete this item? This action cannot be undone. This dialog
-            uses the native HTML &lt;dialog&gt; element with .showModal().
+            Are you sure you want to delete this item? This action cannot be undone.
           </p>
           <div className="alert-actions">
             <button
