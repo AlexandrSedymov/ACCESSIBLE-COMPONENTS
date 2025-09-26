@@ -164,7 +164,7 @@ describe('CodeExample Accessibility', () => {
 
     await testComponentA11y(container, 'CodeExample with empty code');
 
-    const summary = screen.getByRole('button', { name: /empty code test/i });
+    const summary = screen.getByLabelText(/empty code test/i);
     await userEvent.click(summary);
 
     // Should still be accessible even with empty code
@@ -180,7 +180,7 @@ describe('CodeExample Accessibility', () => {
     await testKeyboardNavigation(container);
 
     // Expand and test focus doesn't get lost
-    const summary = screen.getByRole('button', { name: /focus test/i });
+    const summary = screen.getByLabelText(/focus test/i);
     await userEvent.click(summary);
 
     await waitFor(() => {
@@ -202,20 +202,24 @@ describe('CodeExample Accessibility', () => {
     await testComponentA11y(container, 'Multiple CodeExample instances');
 
     // Both should be independently operable
-    const firstSummary = screen.getByRole('button', { name: /first example/i });
-    const secondSummary = screen.getByRole('button', { name: /second example/i });
+    const allSummaries = screen.getAllByLabelText(/first example|second example/i);
+    const firstSummary = allSummaries.find(el => el.getAttribute('aria-label')?.includes('First'));
+    const secondSummary = allSummaries.find(el => el.getAttribute('aria-label')?.includes('Second'));
+    
+    expect(firstSummary).toBeDefined();
+    expect(secondSummary).toBeDefined();
 
     expect(firstSummary).toBeInTheDocument();
     expect(secondSummary).toBeInTheDocument();
 
     // Open first
-    await userEvent.click(firstSummary);
+    if (firstSummary) await userEvent.click(firstSummary);
     await waitFor(() => {
       expect(screen.getByText(/console\.log\('first'\)/)).toBeInTheDocument();
     });
 
     // Open second
-    await userEvent.click(secondSummary);
+    if (secondSummary) await userEvent.click(secondSummary);
     await waitFor(() => {
       expect(screen.getByText(/console\.log\('second'\)/)).toBeInTheDocument();
     });

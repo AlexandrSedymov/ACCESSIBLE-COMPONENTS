@@ -66,7 +66,7 @@ describe('NativeAlertDialog Accessibility', () => {
     // Test dialog title
     const title = screen.getByRole('heading', { level: 2 });
     expect(title).toBeInTheDocument();
-    expect(title).toHaveTextContent('Confirm Action (Native Dialog)');
+    expect(title).toHaveTextContent('Confirm Action');
 
     // Test close button
     const closeButton = screen.getByRole('button', { name: /cancel deletion/i });

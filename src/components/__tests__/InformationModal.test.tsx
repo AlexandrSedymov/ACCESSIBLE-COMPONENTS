@@ -56,7 +56,7 @@ describe('InformationModal Accessibility', () => {
     expect(title).toHaveTextContent('Confirmation Required');
 
     // Test close button - specifically the X button, not the cancel button
-    const closeButton = screen.getByRole('button', { name: /close modal/i });
+    const closeButton = screen.getByRole('button', { name: 'Close modal' });
     expect(closeButton).toBeInTheDocument();
     expect(closeButton).toHaveAttribute('aria-label', 'Close modal');
   });
@@ -79,7 +79,7 @@ describe('InformationModal Accessibility', () => {
     });
 
     // Close modal and verify focus returns to trigger
-    const closeButton = screen.getByRole('button', { name: /close/i });
+    const closeButton = screen.getByRole('button', { name: 'Close modal' });
     await userEvent.click(closeButton);
 
     // Focus should return to the trigger button
@@ -108,7 +108,7 @@ describe('InformationModal Accessibility', () => {
     expect(focusableElements.length).toBeGreaterThan(0);
 
     // Test that we can tab through modal elements
-    const closeButton = screen.getByRole('button', { name: /close modal/i });
+    const closeButton = screen.getByRole('button', { name: 'Close modal' });
     const submitButton = screen.getByRole('button', { name: /submit/i });
 
     expect(closeButton).toBeInTheDocument();

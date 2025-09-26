@@ -11,8 +11,8 @@ type LinkSectionProps = {
 };
 
 const LinkSection: React.FC<LinkSectionProps> = ({ links }) => (
-  <section className="link-section" aria-labelledby="link-section-title">
-    <nav aria-label="Useful Links">
+  <aside className="link-section" aria-labelledby="link-section-title">
+    <div>
       <h2 id="link-section-title" className="link-section-title">
         Useful Links:
       </h2>
@@ -25,8 +25,8 @@ const LinkSection: React.FC<LinkSectionProps> = ({ links }) => (
           </li>
         ))}
       </ul>
-    </nav>
-  </section>
+    </div>
+  </aside>
 );
 
 export default LinkSection;
