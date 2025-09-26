@@ -2,15 +2,15 @@
 
 /* Alert Dialog Trigger Button */
 .alert-button {
-  background: #e67e22; /* Warm orange instead of red */
+  background: #333333; /* Warm orange instead of red */
 }
 
 .alert-button:hover {
-  background: #d35400;
+  background: #1f1f1f;
 }
 
 .alert-button:focus {
-  outline: 2px solid #d35400;
+  outline: 2px solid #080808;
   outline-offset: 2px;
 }
 
