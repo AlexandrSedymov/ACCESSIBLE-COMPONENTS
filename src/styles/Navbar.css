@@ -41,6 +41,44 @@
   outline-offset: 2px;
 }
 
+/* Current page indicator */
+.navbar-link--current {
+  background: #007acc !important;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.navbar-link--current::after {
+  content: ' (current page)';
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.navbar-link--current:hover {
+  background: #005fa3 !important;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Main content focus styles for navigation */
+main[tabindex="-1"]:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navbar-link {

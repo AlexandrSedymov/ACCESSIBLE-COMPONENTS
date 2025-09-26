@@ -20,7 +20,7 @@ const CodeExample: React.FC<CodeExampleProps> = ({
   
   return (
   <details className="code-example-spoiler" open={defaultOpen}>
-    <summary className="code-example-summary" tabIndex={0} aria-label={title}>
+    <summary className="code-example-summary" tabIndex={0}>
       <span className="code-example-icon" aria-hidden="true">
         ▶
       </span>

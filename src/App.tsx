@@ -9,10 +9,14 @@ import { ModalDialog } from './pages/ModalDialog';
 import { LinksVsButtons } from './pages/LinksVsButtons';
 import { RadioButtonPage } from './pages/RadioButton';
 import { InputFieldPage } from './pages/InputField';
+import { useFocusManagement } from './hooks/useFocusManagement';
 
-function App() {
+function AppContent() {
+  // Enable automatic focus management for navigation
+  useFocusManagement();
+
   return (
-    <BrowserRouter>
+    <>
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
@@ -24,6 +28,14 @@ function App() {
         <Route path="/radio-buttons" element={<RadioButtonPage />} />
         <Route path="/input-fields" element={<InputFieldPage />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
