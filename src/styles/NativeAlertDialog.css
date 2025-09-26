@@ -1,0 +1,173 @@
+/* NativeAlertDialog.css */
+
+/* Alert Dialog Trigger Button */
+.alert-button {
+  background: #e67e22; /* Warm orange instead of red */
+}
+
+.alert-button:hover {
+  background: #d35400;
+}
+
+.alert-button:focus {
+  outline: 2px solid #d35400;
+  outline-offset: 2px;
+}
+
+/* Native Dialog Container */
+.native-alert-dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
+  max-height: 90vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+}
+
+.native-alert-dialog::backdrop {
+  background: rgba(52, 58, 64, 0.6); /* Neutral dark backdrop */
+  backdrop-filter: blur(2px);
+}
+
+.native-alert-dialog[open] {
+  animation: dialogFadeIn 0.3s ease-out;
+}
+
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Alert Dialog Content */
+.alert-dialog-content {
+  min-width: 400px;
+  max-width: 500px;
+  text-align: center;
+  border-top: 4px solid #f39c12; /* Softer yellow-orange border */
+  margin: auto; /* Ensure centering */
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Alert Icon */
+.alert-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Alert Title */
+.alert-title {
+  color: #d35400; /* Warm orange title color */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Alert Description */
+.alert-description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Alert Action Buttons Container */
+.alert-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Alert Confirm Button */
+.alert-confirm-button {
+  background: #e67e22; /* Warm orange confirm button */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.alert-confirm-button:hover {
+  background: #d35400;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+}
+
+.alert-confirm-button:focus {
+  outline: 3px solid rgba(230, 126, 34, 0.5);
+  outline-offset: 2px;
+}
+
+.alert-confirm-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(230, 126, 34, 0.3);
+}
+
+/* Alert Cancel Button */
+.alert-cancel-button {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.alert-cancel-button:hover {
+  background: #545b62;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.alert-cancel-button:focus {
+  outline: 3px solid rgba(108, 117, 125, 0.5);
+  outline-offset: 2px;
+}
+
+.alert-cancel-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsive adjustments for Alert Dialog */
+@media (max-width: 480px) {
+  .alert-dialog-content {
+    min-width: auto;
+    max-width: calc(100vw - 2rem);
+    margin: 1rem;
+  }
+
+  .alert-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .alert-actions button {
+    width: 100%;
+    margin: 0;
+  }
+}

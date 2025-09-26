@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import '../styles/ModalDialog.css';
+import '../styles/NativeAlertDialog.css';
 
 export const NativeAlertDialog: React.FC = () => {
   const nativeDialogRef = useRef<HTMLDialogElement>(null);

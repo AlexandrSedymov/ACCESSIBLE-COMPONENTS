@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/ModalDialog.css';
+import '../styles/InformationModal.css';
 
 // Selector for all focusable elements
 const FOCUSABLE_SELECTOR =
@@ -129,8 +130,24 @@ export const InputFieldPage: React.FC = () => {
             className="modal-backdrop"
             tabIndex={-1}
             onClick={closeLoginModal}
+            onKeyDown={e => {
+              if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+                closeLoginModal();
+              }
+            }}
           >
-            <div className="modal-content login-modal-content" onClick={e => e.stopPropagation()}>
+            <div
+              className="modal-content login-modal-content"
+              role="document"
+              tabIndex={0}
+              onClick={e => e.stopPropagation()}
+              onKeyDown={e => {
+                // Allow ESC, Enter, and Space to close modal for accessibility
+                if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+                  closeLoginModal();
+                }
+              }}
+            >
               <h3 id="login-modal-title" className="modal-title">
                 User Login
               </h3>

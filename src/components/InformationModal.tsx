@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/ModalDialog.css';
+import '../styles/InformationModal.css';
 
 // React way of creating a modal dialog with focus management and accessibility features
 // Selector for all focusable elements
@@ -98,7 +98,17 @@ export const InformationModal: React.FC = () => {
           aria-labelledby="information-modal-title"
           aria-describedby="information-modal-description"
           className="modal-backdrop"
+          onClick={e => {
+            if (e.target === modalRef.current) {
+              closeModal();
+            }
+          }}
           tabIndex={-1}
+          onKeyDown={e => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target === modalRef.current) {
+              closeModal();
+            }
+          }}
         >
           <div className="modal-content">
             {/* Close Icon */}
