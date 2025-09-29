@@ -6,7 +6,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Modal Dialog', href: '/modal-dialog' },
   { label: 'Links VS Buttons', href: '/links-vs-buttons' },
-  { label: 'Radio Buttons', href: '/radio-buttons' },
+  // { label: 'Radio Buttons', href: '/radio-buttons' },
   { label: 'Input Fields', href: '/input-fields' },
 ];
 
