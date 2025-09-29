@@ -8,22 +8,24 @@
 
 /* Trigger Button */
 .library-modal-trigger {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #667eea;
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-self: flex-start;
+  width: fit-content;
 }
 
 .library-modal-trigger:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  background: #5a67d8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
 }
 
 .library-modal-trigger:focus {
@@ -197,46 +199,60 @@
 }
 
 .library-modal-button {
-  padding: 10px 20px;
+  padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  border: 2px solid transparent;
+  border: none;
   width: fit-content;
 }
 
 .library-modal-button--primary {
-  background-color: #667eea;
+  background-color: #48bb78;
   color: white;
-  border-color: #667eea;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .library-modal-button--primary:hover {
-  background-color: #5a67d8;
-  border-color: #5a67d8;
+  background-color: #38a169;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
 }
 
 .library-modal-button--primary:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #48bb78;
   outline-offset: 2px;
+}
+
+.library-modal-button--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(72, 187, 120, 0.2);
 }
 
 .library-modal-button--secondary {
-  background-color: white;
-  color: #374151;
-  border-color: #d1d5db;
+  background-color: #a0aec0;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .library-modal-button--secondary:hover {
-  background-color: #f9fafb;
-  border-color: #9ca3af;
+  background-color: #718096;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(160, 174, 192, 0.3);
 }
 
 .library-modal-button--secondary:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #a0aec0;
   outline-offset: 2px;
+}
+
+.library-modal-button--secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(160, 174, 192, 0.2);
 }
 
 /* Responsive Design */

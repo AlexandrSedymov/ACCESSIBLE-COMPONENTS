@@ -2,16 +2,23 @@
 
 /* Alert Dialog Trigger Button */
 .alert-button {
-  background: #333333; /* Warm orange instead of red */
+  background: #667eea;
 }
 
 .alert-button:hover {
-  background: #1f1f1f;
+  background: #5a67d8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
 }
 
 .alert-button:focus {
-  outline: 2px solid #080808;
+  outline: 2px solid #667eea;
   outline-offset: 2px;
+}
+
+.alert-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
 }
 
 /* Native Dialog Container */
@@ -110,62 +117,64 @@
 
 /* Alert Confirm Button */
 .alert-confirm-button {
-  background: #af5200; /* Warm orange confirm button */
+  background: #48bb78;
   color: #fff;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
   width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .alert-confirm-button:hover {
-  background: #903a00;
+  background: #38a169;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
 }
 
 .alert-confirm-button:focus {
-  outline: 3px solid rgba(145, 68, 0, 0.5);
+  outline: 2px solid #48bb78;
   outline-offset: 2px;
 }
 
 .alert-confirm-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(161, 75, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(72, 187, 120, 0.2);
 }
 
 /* Alert Cancel Button */
 .alert-cancel-button {
-  background: #6c757d;
+  background: #a0aec0;
   color: #fff;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
   width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .alert-cancel-button:hover {
-  background: #545b62;
+  background: #718096;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  box-shadow: 0 4px 8px rgba(160, 174, 192, 0.3);
 }
 
 .alert-cancel-button:focus {
-  outline: 3px solid rgba(108, 117, 125, 0.5);
+  outline: 2px solid #a0aec0;
   outline-offset: 2px;
 }
 
 .alert-cancel-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+  box-shadow: 0 2px 4px rgba(160, 174, 192, 0.2);
 }
 
 /* Responsive adjustments for Alert Dialog */

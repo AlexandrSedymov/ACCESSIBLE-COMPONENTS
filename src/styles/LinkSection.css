@@ -16,6 +16,7 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #212529;
+  text-align: left;
 }
 
 /* link-section navigation styling */
@@ -171,11 +172,11 @@
 @media (max-width: 480px) {
   .link-section {
     padding: 1rem 0.75rem;
-    text-align: center;
+    text-align: left;
   }
 
   .link-section-links {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 

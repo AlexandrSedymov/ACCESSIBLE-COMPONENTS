@@ -89,47 +89,64 @@
 
 /* Open modal trigger button */
 .modal-open-button {
-  background: #005cbf;
+  background: #667eea;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
   width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .modal-open-button:hover {
-  background: #004793;
+  background: #5a67d8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
 }
 
 .modal-open-button:focus {
-  outline: 2px solid #0056b3;
+  outline: 2px solid #667eea;
   outline-offset: 2px;
+}
+
+.modal-open-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
 }
 
 /* Submit button */
 .modal-submit-button {
-  background: #006919;
+  background: #48bb78;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .modal-submit-button:hover {
-  background: #005b14;
+  background: #38a169;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
 }
 
 .modal-submit-button:focus {
-  outline: 2px solid #00390c;
+  outline: 2px solid #48bb78;
   outline-offset: 2px;
+}
+
+.modal-submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(72, 187, 120, 0.2);
 }
 
 .modal-submit-button:disabled {
@@ -139,26 +156,27 @@
 
 /* Cancel button */
 .modal-cancel-button {
-  background: #6c757d;
+  background: #a0aec0;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
   width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .modal-cancel-button:hover {
-  background: #545b62;
+  background: #718096;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  box-shadow: 0 4px 8px rgba(160, 174, 192, 0.3);
 }
 
 .modal-cancel-button:focus {
-  outline: 3px solid rgba(108, 117, 125, 0.5);
+  outline: 2px solid #a0aec0;
   outline-offset: 2px;
 }
 
