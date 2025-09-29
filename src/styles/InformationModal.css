@@ -69,6 +69,7 @@
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
   color: #333;
+  text-align: left;
 }
 
 .modal-description {
@@ -81,7 +82,7 @@
 .simple-modal-actions {
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 2rem;
   flex-wrap: wrap;
 }
@@ -96,6 +97,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s ease;
+  width: fit-content;
 }
 
 .modal-open-button:hover {
@@ -118,6 +120,7 @@
   font-size: 1rem;
   font-weight: 600;
   transition: background-color 0.2s ease;
+  width: fit-content;
 }
 
 .modal-submit-button:hover {
@@ -145,7 +148,7 @@
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-width: 100px;
+  width: fit-content;
 }
 
 .modal-cancel-button:hover {
@@ -256,8 +259,9 @@
   }
 
   .simple-modal-actions button {
-    width: 100%;
+    width: fit-content;
     margin: 0;
+    align-self: flex-start;
   }
 
   .form-actions {
@@ -265,7 +269,8 @@
   }
 
   .form-actions button {
-    width: 100%;
+    width: fit-content;
     margin: 0;
+    align-self: flex-start;
   }
 }

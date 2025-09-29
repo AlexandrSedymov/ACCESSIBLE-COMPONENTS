@@ -2,9 +2,11 @@ import React from 'react';
 import '../styles/ModalDialog.css';
 import { InformationModal } from '../components/InformationModal';
 import { NativeAlertDialog } from '../components/NativeAlertDialog';
+import { LibraryModal } from '../components/LibraryModal';
 import CodeExample from '../components/CodeExample';
 import alertDialogLogicCode from '../code-example/alert-dialog-logic.txt?raw';
 import informationalDialogLogicCode from '../code-example/information-dialog-logic.txt?raw';
+import libraryModalLogicCode from '../code-example/library-modal-logic.txt?raw';
 import LinkSection from '../components/LinkSection';
 
 export const ModalDialog: React.FC = () => {
@@ -49,11 +51,33 @@ export const ModalDialog: React.FC = () => {
           <CodeExample code={alertDialogLogicCode} title="Native HTML Dialog Code" language="tsx" />
         </div>
       </div>
+
+      {/* Library Modal Example */}
+      <div className="modal-example">
+        <div className="modal-example-left">
+          <h2>Library Modal Dialog</h2>
+          <p>
+            Professional modal implementation using open-source UI library (Radix UI) with built-in accessibility, 
+            focus management, and portal rendering. Includes form handling and controlled state.
+          </p>
+          <LibraryModal />
+        </div>
+        <div className="modal-example-right">
+          <div className="code-example-title">Code Example</div>
+          <p>Open-source UI library (Radix UI) implementation with controlled state, form integration, and accessibility features.</p>
+          <CodeExample code={libraryModalLogicCode} title="Library Modal Code" language="tsx" />
+        </div>
+      </div>
+      
       <LinkSection
         links={[
           {
             label: 'W3C Modal Dialog Example',
             url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/',
+          },
+          {
+            label: 'Radix UI Dialog Documentation',
+            url: 'https://www.radix-ui.com/docs/primitives/components/dialog',
           },
           {
             label: 'Modal dialog from atomica11y.',

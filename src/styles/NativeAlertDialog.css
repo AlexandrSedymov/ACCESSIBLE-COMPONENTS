@@ -67,7 +67,7 @@
 .alert-dialog-content {
   width: 400px;
   max-width: calc(90vw - 2rem);
-  text-align: center;
+  text-align: left;
   border-top: 4px solid #f39c12;
   background: #fff;
   padding: 2rem;
@@ -89,6 +89,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  text-align: left;
 }
 
 /* Alert Description */
@@ -103,7 +104,7 @@
 .alert-actions {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -118,7 +119,7 @@
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-width: 120px;
+  width: fit-content;
 }
 
 .alert-confirm-button:hover {
@@ -148,7 +149,7 @@
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-width: 120px;
+  width: fit-content;
 }
 
 .alert-cancel-button:hover {
@@ -202,9 +203,10 @@
   }
 
   .alert-actions button {
-    width: 100%;
+    width: fit-content;
     margin: 0;
     padding: 1rem 2rem;
+    align-self: flex-start;
   }
 }
 

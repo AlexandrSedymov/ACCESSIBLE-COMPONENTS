@@ -24,6 +24,7 @@
     "validate": "yarn format:fix && yarn type-check && yarn test:a11y && yarn build"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "clsx": "^2.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
