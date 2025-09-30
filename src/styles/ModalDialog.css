@@ -38,10 +38,13 @@
 }
 
 .modal-page-title {
-  text-align: center;
-  font-size: 2rem;
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  color: #333;
+  color: #1a202c;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 1rem;
 }
 
 /* Section headings for modal examples */

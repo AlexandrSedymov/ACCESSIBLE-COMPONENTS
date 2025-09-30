@@ -26,7 +26,6 @@ export const NativeAlertDialog: React.FC = () => {
   };
 
   const handleConfirm = () => {
-    alert('Action confirmed!');
     closeDialog();
   };
 

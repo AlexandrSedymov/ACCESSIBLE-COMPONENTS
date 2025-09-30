@@ -7,7 +7,6 @@ export const LibraryModal: React.FC = () => {
 
   const handleConfirmationSubmit = () => {
     setIsOpen(false);
-    alert('Action confirmed successfully!');
   };
 
   return (

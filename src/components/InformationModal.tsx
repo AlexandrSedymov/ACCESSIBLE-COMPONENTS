@@ -26,7 +26,6 @@ export const InformationModal: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    alert('Form submitted successfully!');
     closeModal();
   };
 

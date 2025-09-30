@@ -57,9 +57,7 @@ export const ModalDialog: React.FC = () => {
         <div className="modal-example-left">
           <h2>Library Modal Dialog</h2>
           <p>
-            Professional modal implementation using open-source UI library (Radix UI) with built-in accessibility, 
-            focus management, and portal rendering. Demonstrates confirmation dialog pattern with library-based 
-            state management and accessibility features.
+            Uses open-source UI library (Radix UI) with built-in accessibility. Demonstrates confirmation dialog pattern with library-based state management and accessibility features.
           </p>
           <LibraryModal />
         </div>
