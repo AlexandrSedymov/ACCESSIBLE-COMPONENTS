@@ -424,7 +424,7 @@ export const InputFieldPage: React.FC = () => {
           <div className="form-actions">
             <button
               type="submit"
-              className={`modal-submit-button ${!isProfileValid ? 'disabled' : ''}`}
+              className={`form-submit-button ${!isProfileValid ? 'disabled' : ''}`}
               disabled={isSubmitted}
               aria-describedby="submit-hint"
             >
@@ -433,7 +433,7 @@ export const InputFieldPage: React.FC = () => {
             <button
               type="button"
               onClick={() => resetProfile()}
-              className="modal-close-button"
+              className="form-cancel-button"
               disabled={isSubmitted}
             >
               Reset Form
@@ -563,7 +563,7 @@ export const InputFieldPage: React.FC = () => {
                 <div className="form-actions">
                   <button
                     type="submit"
-                    className={`modal-submit-button ${!isLoginValid ? 'disabled' : ''}`}
+                    className={`form-submit-button ${!isLoginValid ? 'disabled' : ''}`}
                     disabled={!isLoginValid}
                     aria-describedby="login-modal-description"
                   >
@@ -573,7 +573,7 @@ export const InputFieldPage: React.FC = () => {
                     type="button"
                     onClick={closeLoginModal}
                     aria-label="Cancel login and close modal"
-                    className="modal-close-button"
+                    className="form-cancel-button"
                   >
                     Cancel
                   </button>

@@ -155,7 +155,7 @@
 .nav-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: #4299e1;
+  background: #0077d9;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -164,13 +164,13 @@
 }
 
 .nav-link:hover {
-  background: #3182ce;
+  background: #00529f;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
 }
 
 .nav-link:focus {
-  outline: 2px solid #63b3ed;
+  outline: 2px solid #0095ff;
   outline-offset: 2px;
 }
 

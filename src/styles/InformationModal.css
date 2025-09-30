@@ -89,8 +89,8 @@
 
 /* Open modal trigger button */
 .modal-open-button {
-  background: #667eea;
-  color: #fff;
+  background: #0052aa;
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -103,13 +103,13 @@
 }
 
 .modal-open-button:hover {
-  background: #5a67d8;
+  background: #2c5282;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 8px rgba(43, 108, 176, 0.3);
 }
 
 .modal-open-button:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #1a365d;
   outline-offset: 2px;
 }
 
@@ -120,8 +120,8 @@
 
 /* Submit button */
 .modal-submit-button {
-  background: #48bb78;
-  color: #fff;
+  background: #007738;
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -134,19 +134,19 @@
 }
 
 .modal-submit-button:hover {
-  background: #38a169;
+  background: #2f855a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
+  box-shadow: 0 4px 8px rgba(56, 161, 105, 0.3);
 }
 
 .modal-submit-button:focus {
-  outline: 2px solid #48bb78;
+  outline: 2px solid #22543d;
   outline-offset: 2px;
 }
 
 .modal-submit-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(72, 187, 120, 0.2);
+  box-shadow: 0 2px 4px rgba(56, 161, 105, 0.2);
 }
 
 .modal-submit-button:disabled {
@@ -156,8 +156,8 @@
 
 /* Cancel button */
 .modal-cancel-button {
-  background: #a0aec0;
-  color: #fff;
+  background: #2d3748;
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -170,33 +170,50 @@
 }
 
 .modal-cancel-button:hover {
-  background: #718096;
+  background: #4a5568;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(160, 174, 192, 0.3);
+  box-shadow: 0 4px 8px rgba(45, 55, 72, 0.3);
 }
 
 .modal-cancel-button:focus {
-  outline: 2px solid #a0aec0;
+  outline: 2px solid #718096;
   outline-offset: 2px;
 }
 
 .modal-cancel-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+  box-shadow: 0 2px 4px rgba(45, 55, 72, 0.2);
 }
 
 /* Login Modal Specific Styles */
 .login-button {
-  background: #28a745;
+  background: #38a169;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-button:hover {
-  background: #218838;
+  background: #2f855a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(56, 161, 105, 0.3);
 }
 
 .login-button:focus {
-  outline: 2px solid #218838;
+  outline: 2px solid #22543d;
   outline-offset: 2px;
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(56, 161, 105, 0.2);
 }
 
 .login-modal-content {

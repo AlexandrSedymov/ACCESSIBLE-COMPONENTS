@@ -4,111 +4,45 @@ import '../styles/LibraryModal.css';
 
 export const LibraryModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission process
-    setTimeout(() => {
-      setIsOpen(false);
-      setFormData({ name: '', email: '', message: '' });
-      alert('Form submitted successfully!');
-    }, 500);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  const handleConfirmationSubmit = () => {
+    setIsOpen(false);
+    alert('Action confirmed successfully!');
   };
 
   return (
     <div className="library-modal-demo">
+      <button className="library-modal-trigger" onClick={() => setIsOpen(true)}>
+        Open Library Modal
+      </button>
+
       <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-        <Dialog.Trigger asChild>
-          <button className="library-modal-trigger">
-            Open Contact Form
-          </button>
-        </Dialog.Trigger>
-        
         <Dialog.Portal>
           <Dialog.Overlay className="library-modal-overlay" />
           <Dialog.Content className="library-modal-content">
             <div className="library-modal-header">
               <Dialog.Title className="library-modal-title">
-                Contact Us
+                Confirmation Required
               </Dialog.Title>
               <Dialog.Description className="library-modal-description">
-                Send us a message and we'll get back to you as soon as possible.
+                Please confirm that you want to proceed with this action. This will save your changes and continue.
               </Dialog.Description>
             </div>
 
-            <form onSubmit={handleSubmit} className="library-modal-form">
-              <div className="library-form-field">
-                <label htmlFor="contact-name" className="library-form-label">
-                  Name *
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="library-form-input"
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div className="library-form-field">
-                <label htmlFor="contact-email" className="library-form-label">
-                  Email *
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="library-form-input"
-                  placeholder="Enter your email address"
-                />
-              </div>
-
-              <div className="library-form-field">
-                <label htmlFor="contact-message" className="library-form-label">
-                  Message *
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="library-form-textarea"
-                  placeholder="Enter your message"
-                />
-              </div>
-
-              <div className="library-modal-actions">
-                <Dialog.Close asChild>
-                  <button type="button" className="library-modal-button library-modal-button--secondary">
-                    Cancel
-                  </button>
-                </Dialog.Close>
-                <button type="submit" className="library-modal-button library-modal-button--primary">
-                  Send Message
+            <div className="library-modal-actions">
+              <button
+                onClick={handleConfirmationSubmit}
+                className="library-modal-button library-modal-button--primary"
+                type="button"
+              >
+                Confirm
+              </button>
+              <Dialog.Close asChild>
+                <button type="button" className="library-modal-button library-modal-button--secondary">
+                  Cancel
                 </button>
-              </div>
-            </form>
+              </Dialog.Close>
+            </div>
 
             <Dialog.Close asChild>
               <button className="library-modal-close" aria-label="Close dialog">
