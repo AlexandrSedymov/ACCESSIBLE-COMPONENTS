@@ -171,13 +171,13 @@ export const LinksVsButtons: React.FC = () => {
                       </Tooltip.Portal>
                     </Tooltip.Root>
                   </div>
-
+{/* 
                   <h3>Anchor Links</h3>
                   <div className="anchor-links">
                     <a href="#buttons-section" className="anchor-link">
                       Jump to Button Examples
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -287,14 +287,14 @@ export const LinksVsButtons: React.FC = () => {
                             Are you sure you want to delete this item? This action cannot be undone and will permanently remove the data.
                           </AlertDialog.Description>
                           <div className="alert-actions">
-                            <AlertDialog.Cancel asChild>
-                              <button className="alert-cancel">Cancel</button>
-                            </AlertDialog.Cancel>
                             <AlertDialog.Action asChild>
                               <button className="alert-confirm" onClick={handleDeleteAction}>
                                 Delete
                               </button>
                             </AlertDialog.Action>
+                            <AlertDialog.Cancel asChild>
+                              <button className="alert-cancel">Cancel</button>
+                            </AlertDialog.Cancel>
                           </div>
                         </AlertDialog.Content>
                       </AlertDialog.Portal>
@@ -329,18 +329,6 @@ export const LinksVsButtons: React.FC = () => {
         {/* Resources Section */}
         <LinkSection
           links={[
-            {
-              label: 'W3C: Links vs Buttons Guidelines',
-              url: 'https://www.w3.org/WAI/ARIA/apg/practices/link-and-button-practices/',
-            },
-            {
-              label: 'Radix UI Navigation Menu',
-              url: 'https://www.radix-ui.com/docs/primitives/components/navigation-menu',
-            },
-            {
-              label: 'Radix UI Alert Dialog',
-              url: 'https://www.radix-ui.com/docs/primitives/components/alert-dialog',
-            },
             {
               label: 'MDN: Button Element',
               url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button',

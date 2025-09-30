@@ -75,6 +75,18 @@ export const ModalDialog: React.FC = () => {
             url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/',
           },
           {
+            label: 'W3C Dialog Modal Pattern - Focus Management',
+            url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/',
+          },
+          {
+            label: 'German Federal IT - Accessible Modal Dialog Guide',
+            url: 'https://handreichungen.bfit-bund.de/accessible-uie/modaler_dialog.html',
+          },
+          {
+            label: 'U.S. Web Design System - Modal Component',
+            url: 'https://designsystem.digital.gov/components/modal/',
+          },
+          {
             label: 'Radix UI Dialog Documentation',
             url: 'https://www.radix-ui.com/docs/primitives/components/dialog',
           },
@@ -93,6 +105,28 @@ export const ModalDialog: React.FC = () => {
           {
             label: 'Article: Achieving Focus Trapping in a React Modal Component',
             url: 'https://medium.com/cstech/achieving-focus-trapping-in-a-react-modal-component-3f28f596f35b',
+          },
+        ]}
+      />
+
+      <LinkSection
+        title="Usual issues with recommendation how to fix them:"
+        links={[
+          {
+            label: 'Screen readers can read parent page content outside the modal',
+            url: 'https://docs.deque.com/issue-help/1.0.0/en/reading-order-browse-outside-modal',
+          },
+          {
+            label: 'When the modal is activated, focus is not placed on the modal',
+            url: 'https://docs.deque.com/issue-help/1.0.0/en/focus-modal-none',
+          },
+          {
+            label: 'Focus is not maintained within the modal. It is possible to tab out of the modal',
+            url: 'https://docs.deque.com/issue-help/1.0.0/en/focus-modal-moves-outside',
+          },
+          {
+            label: 'When the modal or similar element is closed, focus is not returned to the triggering element',
+            url: 'https://docs.deque.com/issue-help/1.0.0/en/focus-modal-not-returned',
           },
         ]}
       />

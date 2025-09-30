@@ -152,7 +152,7 @@ export const InputFieldPage: React.FC = () => {
 
   return (
     <main id="main-content" role="main" className="modal-page">
-      <h1 className="modal-page-title">Accessible Form Examples with React Hook Form Library</h1>
+      <h1 className="modal-page-title">Accessible Form Examples with React Hook Form Library (WIP)</h1>
 
       {/* Comprehensive User Profile Form */}
       <div className="modal-example">

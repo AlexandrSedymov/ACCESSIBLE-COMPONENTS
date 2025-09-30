@@ -8,13 +8,14 @@ type LinkSectionLink = {
 
 type LinkSectionProps = {
   links: LinkSectionLink[];
+  title?: string;
 };
 
-const LinkSection: React.FC<LinkSectionProps> = ({ links }) => (
+const LinkSection: React.FC<LinkSectionProps> = ({ links, title = "Useful Links:" }) => (
   <aside className="link-section" aria-labelledby="link-section-title">
     <div>
       <h2 id="link-section-title" className="link-section-title">
-        Useful Links:
+        {title}
       </h2>
       <ul className="link-section-links">
         {links.map((link, idx) => (
