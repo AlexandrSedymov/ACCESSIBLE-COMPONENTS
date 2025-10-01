@@ -9,12 +9,13 @@ type LinkSectionLink = {
 type LinkSectionProps = {
   links: LinkSectionLink[];
   title?: string;
+  labelId?: string;
 };
 
-const LinkSection: React.FC<LinkSectionProps> = ({ links, title = "Useful Links:" }) => (
-  <aside className="link-section" aria-labelledby="link-section-title">
+const LinkSection: React.FC<LinkSectionProps> = ({ links, title = "Useful Links:", labelId }) => (
+  <aside className="link-section" aria-labelledby={labelId}>
     <div>
-      <h2 id="link-section-title" className="link-section-title">
+      <h2 id={labelId} className="link-section-title">
         {title}
       </h2>
       <ul className="link-section-links">

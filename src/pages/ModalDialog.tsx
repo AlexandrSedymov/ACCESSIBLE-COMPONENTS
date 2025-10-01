@@ -69,6 +69,7 @@ export const ModalDialog: React.FC = () => {
       </div>
       
       <LinkSection
+        labelId='useful-links'
         links={[
           {
             label: 'W3C Modal Dialog Example',
@@ -102,6 +103,7 @@ export const ModalDialog: React.FC = () => {
       />
 
       <LinkSection
+        labelId='common-issues'
         title="Usual issues with recommendation how to fix them:"
         links={[
           {
