@@ -98,14 +98,6 @@ export const ModalDialog: React.FC = () => {
             label: 'MDN Web Docs: Dialog',
             url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog',
           },
-          {
-            label: 'Focus trap React library',
-            url: 'https://github.com/focus-trap/focus-trap-react',
-          },
-          {
-            label: 'Article: Achieving Focus Trapping in a React Modal Component',
-            url: 'https://medium.com/cstech/achieving-focus-trapping-in-a-react-modal-component-3f28f596f35b',
-          },
         ]}
       />
 
