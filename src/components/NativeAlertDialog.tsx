@@ -44,6 +44,7 @@ export const NativeAlertDialog: React.FC = () => {
         className="native-alert-dialog"
         aria-labelledby="native-alert-title"
         aria-describedby="native-alert-description"
+        role="alertdialog"
       >
         <div className="modal-content alert-dialog-content">
           <div className="alert-icon" aria-hidden="true">
