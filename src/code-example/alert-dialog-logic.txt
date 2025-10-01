@@ -1,81 +1,26 @@
-export const NativeAlertDialog: React.FC = () => {
-  const nativeDialogRef = useRef<HTMLDialogElement>(null);
-  const confirmButtonRef = useRef<HTMLButtonElement>(null);
-  const alertTitleRef = useRef<HTMLHeadingElement>(null);
+const nativeDialogRef = useRef<HTMLDialogElement>(null);
+const confirmButtonRef = useRef<HTMLButtonElement>(null);
+const alertTitleRef = useRef<HTMLHeadingElement>(null);
 
-  const openDialog = () => {
-    if (nativeDialogRef.current) {
-      nativeDialogRef.current.showModal();
-      // Focus the alert title for screen reader announcement
-      setTimeout(() => {
-        if (alertTitleRef.current) {
-          alertTitleRef.current.focus();
-        }
-      }, 0);
-    }
-  };
+const openDialog = () => {
+  if (nativeDialogRef.current) {
+    nativeDialogRef.current.showModal();
+    // Focus the alert title for screen reader announcement
+    setTimeout(() => {
+      if (alertTitleRef.current) {
+        alertTitleRef.current.focus();
+      }
+    }, 0);
+  }
+};
 
-  const closeDialog = () => {
-    if (nativeDialogRef.current) {
-      nativeDialogRef.current.close();
-      // Native dialog automatically restores focus - no manual intervention needed
-    }
-  };
+const closeDialog = () => {
+  if (nativeDialogRef.current) {
+    nativeDialogRef.current.close();
+    // Native dialog automatically restores focus - no manual intervention needed
+  }
+};
 
-  const handleConfirm = () => {
-    closeDialog();
-  };
-
-  return (
-    <>
-      <button
-        onClick={openDialog}
-        aria-haspopup="dialog"
-        className="modal-open-button alert-button"
-      >
-        Open Native Alert Dialog
-      </button>
-
-      <dialog
-        ref={nativeDialogRef}
-        className="native-alert-dialog"
-        aria-labelledby="native-alert-title"
-        aria-describedby="native-alert-description"
-      >
-        <div className="modal-content alert-dialog-content">
-          <div className="alert-icon" aria-hidden="true">
-            ⚠️
-          </div>
-          <h2
-            ref={alertTitleRef}
-            id="native-alert-title"
-            className="modal-title alert-title"
-            tabIndex={-1}
-          >
-            Confirm Action
-          </h2>
-          <p id="native-alert-description" className="modal-description alert-description">
-            Are you sure you want to delete this item? This action cannot be undone.
-          </p>
-          <div className="alert-actions">
-            <button
-              ref={confirmButtonRef}
-              onClick={handleConfirm}
-              className="alert-confirm-button"
-              aria-describedby="native-alert-description"
-            >
-              Delete Item
-            </button>
-            <button
-              onClick={closeDialog}
-              className="alert-cancel-button"
-              aria-label="Cancel deletion"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </dialog>
-    </>
-  );
+const handleConfirm = () => {
+  closeDialog();
 };

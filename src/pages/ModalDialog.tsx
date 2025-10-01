@@ -92,10 +92,6 @@ export const ModalDialog: React.FC = () => {
             url: 'https://www.radix-ui.com/docs/primitives/components/dialog',
           },
           {
-            label: 'Modal dialog from atomica11y.',
-            url: 'https://www.atomica11y.com/demos/dialog-modal/',
-          },
-          {
             label: 'MDN Web Docs: Dialog',
             url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog',
           },
