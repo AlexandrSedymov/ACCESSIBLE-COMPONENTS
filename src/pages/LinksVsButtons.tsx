@@ -53,13 +53,6 @@ export const LinksVsButtons: React.FC = () => {
 </a>`;
 
   const buttonExampleCode = `// ✅ Correct Button Usage
-<button 
-  type="button" 
-  onClick={handleAction}
-  className="action-button"
->
-  Toggle Menu
-</button>
 
 // ✅ Form Submit Button
 <button 
@@ -210,7 +203,7 @@ export const LinksVsButtons: React.FC = () => {
                       Show Notification
                     </button>
                     
-                    <Tooltip.Root>
+                    {/* <Tooltip.Root>
                       <Tooltip.Trigger asChild>
                         <button 
                           type="button" 
@@ -226,7 +219,7 @@ export const LinksVsButtons: React.FC = () => {
                           <Tooltip.Arrow className="tooltip-arrow" />
                         </Tooltip.Content>
                       </Tooltip.Portal>
-                    </Tooltip.Root>
+                    </Tooltip.Root> */}
                   </div>
 
                   <h3>Form Submission</h3>

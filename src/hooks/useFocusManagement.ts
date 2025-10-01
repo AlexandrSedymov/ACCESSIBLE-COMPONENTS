@@ -8,6 +8,10 @@ import { useLocation } from 'react-router-dom';
  * 1. The route changes (user navigates via navigation links)
  * 2. The main content element exists on the page
  * 
+ * For optimal screen reader support (especially VoiceOver), it prioritizes
+ * focusing the H1 element when available, as this provides the clearest
+ * announcement of the page content. Falls back to the main element if no H1 is found.
+ * 
  * This is essential for screen reader users who need to know that
  * the page content has changed and where to start reading.
  */
@@ -23,24 +27,38 @@ export const useFocusManagement = (
       const mainElement = document.querySelector(targetSelector) as HTMLElement;
       
       if (mainElement) {
-        // Make sure the element can receive focus
-        // If it doesn't have tabindex, add -1 (programmatic focus only)
-        if (!mainElement.hasAttribute('tabindex')) {
-          mainElement.setAttribute('tabindex', '-1');
+        // For VoiceOver compatibility, try to focus the H1 first
+        const h1Element = mainElement.querySelector('h1') as HTMLElement;
+        
+        if (h1Element) {
+          // Make sure the H1 can receive focus
+          if (!h1Element.hasAttribute('tabindex')) {
+            h1Element.setAttribute('tabindex', '-1');
+          }
+          
+          // Focus the H1 - VoiceOver will read the heading content
+          h1Element.focus();
+        } else {
+          // Fallback to main element if no H1 found
+          // Make sure the element can receive focus
+          if (!mainElement.hasAttribute('tabindex')) {
+            mainElement.setAttribute('tabindex', '-1');
+          }
+          
+          // Focus the main content area
+          mainElement.focus();
         }
         
-        // Focus the main content area
-        mainElement.focus();
-        
         // Optional: Add visual focus indicator for keyboard users
-        // This will be removed when user interacts with other elements
-        mainElement.style.outline = '2px solid #007acc';
-        mainElement.style.outlineOffset = '2px';
+        // Apply to the focused element (H1 or main)
+        const focusedElement = h1Element || mainElement;
+        focusedElement.style.outline = '2px solid #007acc';
+        focusedElement.style.outlineOffset = '2px';
         
         // Remove the focus outline after a short delay or on next interaction
         const removeFocusStyle = () => {
-          mainElement.style.outline = '';
-          mainElement.style.outlineOffset = '';
+          focusedElement.style.outline = '';
+          focusedElement.style.outlineOffset = '';
         };
         
         // Remove outline on next click or keyboard interaction

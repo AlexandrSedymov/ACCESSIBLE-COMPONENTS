@@ -78,6 +78,14 @@ main[tabindex="-1"]:focus {
   outline-offset: 2px;
 }
 
+/* H1 focus styles for VoiceOver navigation */
+h1[tabindex="-1"]:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+  /* Ensure focus is visible but not jarring */
+  border-radius: 2px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navbar-link {

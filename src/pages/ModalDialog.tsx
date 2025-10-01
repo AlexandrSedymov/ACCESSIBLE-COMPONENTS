@@ -12,7 +12,7 @@ import LinkSection from '../components/LinkSection';
 export const ModalDialog: React.FC = () => {
   return (
     <main id="main-content" role="main" className="modal-page">
-      <h1 className="modal-page-title">Accessible Modal Dialog Examples</h1>
+      <h1 tabIndex={-1} className="modal-page-title">Accessible Modal Dialog Examples</h1>
 
       {/* Information Modal Example */}
       <div className="modal-example">

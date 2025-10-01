@@ -31,7 +31,8 @@ function AppContent() {
 
 **Key features:**
 - Automatically detects route changes
-- Moves focus to the main content element (`#main-content` by default)
+- Prioritizes focusing H1 elements for VoiceOver compatibility
+- Falls back to main content element (`#main-content`) if no H1 found
 - Adds `tabindex="-1"` to make elements focusable programmatically
 - Provides visual focus indicator for keyboard users
 - Cleans up focus styles after user interaction
@@ -133,6 +134,7 @@ main[tabindex="-1"]:focus {
 2. **Screen Reader Support**: 
    - Announces page changes
    - Clearly indicates current page
+   - Focuses H1 elements for better VoiceOver compatibility
    - Moves focus to main content automatically
 
 3. **Keyboard Navigation**:
@@ -168,10 +170,22 @@ This implementation works in all modern browsers and is compatible with:
 - Dragon NaturallySpeaking (voice control)
 - Keyboard-only navigation
 
+## VoiceOver-Specific Testing
+
+For VoiceOver users on macOS:
+1. **Enable VoiceOver**: Cmd + F5 or System Preferences → Accessibility
+2. **Test in Safari**: Best compatibility for VoiceOver
+3. **Listen for full announcements**: Should hear heading content, not just "heading level 1"
+4. **Verify focus timing**: If announcements are cut off, increase `focusDelay` parameter
+
+See `docs/VOICEOVER_FOCUS_SOLUTIONS.md` for detailed VoiceOver troubleshooting.
+
 ## Best Practices
 
 1. **Always use semantic HTML**: `<main>`, `<nav>`, `<h1>-<h6>`
 2. **Consistent page structure**: Every page should follow the same pattern
 3. **Test with real assistive technology**: Use screen readers and keyboard-only navigation
+4. **Focus H1 elements**: Provides clearest announcements for screen readers
+5. **Provide fallbacks**: Always have main element as backup focus target
 4. **Provide skip links**: Allow users to bypass repetitive navigation
 5. **Clear page titles**: Each page should have descriptive titles in `<h1>` elements
