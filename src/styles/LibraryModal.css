@@ -112,19 +112,22 @@
 /* Close Button */
 .library-modal-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  top: 1rem;
+  right: 1rem;
+  background: none;
   border: none;
-  background: transparent;
-  color: #6b7280;
+  font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
 }
 
 .library-modal-close:hover {

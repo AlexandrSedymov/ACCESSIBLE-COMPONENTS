@@ -19,8 +19,8 @@ const LinkSection: React.FC<LinkSectionProps> = ({ links, title = "Useful Links:
         {title}
       </h2>
       <ul className="link-section-links">
-        {links.map((link, idx) => (
-          <li key={idx}>
+        {links.map((link) => (
+          <li key={link.url}>
             <a href={link.url} className="link-section-link">
               {link.label}
             </a>

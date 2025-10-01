@@ -45,20 +45,7 @@ export const LibraryModal: React.FC = () => {
 
             <Dialog.Close asChild>
               <button className="library-modal-close" aria-label="Close dialog">
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m11.7816 4.03157c.0824-.08241.0824-.21569 0-.2981-.0824-.08241-.2157-.08241-.2981 0L7.50002 7.71895 3.51909 3.73802c-.08241-.08241-.21569-.08241-.2981 0-.08241.08241-.08241.21569 0 .2981L7.20196 7.99999l-3.98093 3.98093c-.08241.0824-.08241.2157 0 .2981.08241.0824.21569.0824.2981 0L7.50002 8.29105l3.98093 3.98093c.0824.0824.2157.0824.2981 0 .0824-.0824.0824-.2157 0-.2981L7.79808 7.99999 11.7816 4.03157Z"
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                x
               </button>
             </Dialog.Close>
           </Dialog.Content>
