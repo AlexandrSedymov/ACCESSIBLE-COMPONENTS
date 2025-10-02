@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
         name="description"
         content="A comprehensive collection of accessible-first UI components with practical examples for developers."
       />
-      <h1 className="home-title">Welcome to accessible components playground</h1>
+      <h1 className="home-title" id="main-title">Welcome to accessible components playground</h1>
       <p className="home-description">
         A collection of practical, accessible-first UI components. This project serves as a living
         guide to implementing web accessibility, providing documented examples for UX designers,

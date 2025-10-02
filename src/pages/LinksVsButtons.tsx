@@ -90,7 +90,7 @@ export const LinksVsButtons: React.FC = () => {
   return (
     <Tooltip.Provider>
       <main id="main-content" role="main" className="links-vs-buttons-page">
-        <h1 className="page-title">Links vs Buttons: When to Use What</h1>
+        <h1 className="page-title" id="main-title">Links vs Buttons: When to Use What</h1>
         
         {/* Introduction Section */}
         <section className="introduction-section">

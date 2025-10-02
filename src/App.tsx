@@ -17,7 +17,7 @@ function AppContent() {
 
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      <a href="#main-title" className="skip-link">
         Skip to main content
       </a>
       <Navbar />

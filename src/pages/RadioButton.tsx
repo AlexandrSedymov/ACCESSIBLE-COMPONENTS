@@ -11,7 +11,7 @@ export const RadioButtonPage: React.FC = () => {
 
   return (
     <main id="main-content" role="main" style={{ padding: '1rem' }}>
-      <h1>Accessible Radio Button Example</h1>
+      <h1 id="main-title">Accessible Radio Button Example</h1>
       <form>
         <fieldset>
           <legend>Choose an option</legend>
