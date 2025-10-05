@@ -589,7 +589,6 @@
   }
 
   .alert-actions {
-    flex-direction: column-reverse;
     gap: 0.75rem;
   }
 

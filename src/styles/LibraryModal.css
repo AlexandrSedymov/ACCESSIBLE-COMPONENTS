@@ -286,7 +286,6 @@
   }
   
   .library-modal-actions {
-    flex-direction: column-reverse;
     gap: 8px;
   }
   
