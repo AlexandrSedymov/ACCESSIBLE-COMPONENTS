@@ -1,62 +1,9 @@
 /* InformationModal.css */
 
-/* Common modal backdrop */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 1rem; /* Add padding for better mobile spacing */
-}
-
-/* Modal content container */
-.modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  min-width: 300px;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Close Icon Styling */
-.modal-close-icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.25rem;
-  line-height: 1;
-  color: #6c757d;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Note: .modal-backdrop, .modal-content, and .modal-close-icon now use utility classes */
+/* Only component-specific overrides for hover/focus states remain here */
 .modal-close-icon:hover {
-  background: #f8f9fa;
-  color: #495057;
-  transform: scale(1.1);
-}
-
-.modal-close-icon:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-  background: #f8f9fa;
-  color: #495057;
+  transform: scale(1.1); /* Additional effect specific to InformationModal */
 }
 
 .modal-close-icon:active {

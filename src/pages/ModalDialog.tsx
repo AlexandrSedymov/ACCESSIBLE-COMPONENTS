@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/utilities.css';
 import '../styles/ModalDialog.css';
 import { InformationModal } from '../components/InformationModal';
 import { NativeAlertDialog } from '../components/NativeAlertDialog';
@@ -11,8 +12,8 @@ import LinkSection from '../components/LinkSection';
 
 export const ModalDialog: React.FC = () => {
   return (
-    <main id="main-content" role="main" className="modal-page">
-      <h1 className="modal-page-title" id="main-title">Accessible Modal Dialog Examples</h1>
+    <main id="main-content" role="main" className="container-padding-sm">
+      <h1 className="page-title modal-page-title" id="main-title">Accessible Modal Dialog Examples</h1>
 
       {/* Information Modal Example */}
       <div className="modal-example">
@@ -24,7 +25,7 @@ export const ModalDialog: React.FC = () => {
           </p>
           <InformationModal />
         </div>
-        <div className="modal-example-right">
+        <div className="code-container modal-example-right">
           <div className="code-example-title">Code Example</div>
           <p>React implementation with useState and custom focus trapping logic.</p>
           <CodeExample
@@ -45,7 +46,7 @@ export const ModalDialog: React.FC = () => {
           </p>
           <NativeAlertDialog />
         </div>
-        <div className="modal-example-right">
+        <div className="code-container modal-example-right">
           <div className="code-example-title">Code Example</div>
           <p>Native HTML dialog implementation with showModal() and automatic focus management.</p>
           <CodeExample code={alertDialogLogicCode} title="Native HTML Dialog Code" language="tsx" />
@@ -61,7 +62,7 @@ export const ModalDialog: React.FC = () => {
           </p>
           <LibraryModal />
         </div>
-        <div className="modal-example-right">
+        <div className="code-container modal-example-right">
           <div className="code-example-title">Code Example</div>
           <p>Open-source UI library (Radix UI) implementation with controlled state, form integration, and accessibility features.</p>
           <CodeExample code={libraryModalLogicCode} title="Library Modal Code" language="tsx" />
