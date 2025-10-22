@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import * as Tooltip from '@radix-ui/react-tooltip';
+import '../styles/utilities.css';
 import '../styles/LinksVsButtons.css';
 import CodeExample from '../components/CodeExample';
 import LinkSection from '../components/LinkSection';
@@ -89,15 +90,15 @@ export const LinksVsButtons: React.FC = () => {
 
   return (
     <Tooltip.Provider>
-      <main id="main-content" role="main" className="links-vs-buttons-page">
+      <main id="main-content" role="main" className="container-padding links-vs-buttons-page">
         <h1 className="page-title" id="main-title">Links vs Buttons: When to Use What</h1>
         
         {/* Introduction Section */}
         <section className="introduction-section">
-          <div className="intro-content">
-            <h2>Understanding the Difference</h2>
+                    <div className="intro-content">
+            <h2 className="section-title">Understanding the Difference</h2>
             <div className="guidelines">
-              <div className="guideline-card link-guidelines">
+              <div className="card guideline-card link-guidelines">
                 <h3>📎 Links</h3>
                 <ul>
                   <li><strong>Navigation:</strong> Take users to other locations (URL changes)</li>
@@ -107,7 +108,7 @@ export const LinksVsButtons: React.FC = () => {
                   <li><strong>Avoid:</strong> Opening in new tabs without warning</li>
                 </ul>
               </div>
-              <div className="guideline-card button-guidelines">
+              <div className="card guideline-card button-guidelines">
                 <h3>🔘 Buttons</h3>
                 <ul>
                   <li><strong>Actions:</strong> Trigger scripted functionality</li>

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import '../styles/utilities.css';
 import '../styles/NativeAlertDialog.css';
 
 export const NativeAlertDialog: React.FC = () => {
@@ -34,7 +35,7 @@ export const NativeAlertDialog: React.FC = () => {
       <button
         onClick={openDialog}
         aria-haspopup="dialog"
-        className="modal-open-button alert-button"
+        className="btn-base btn-warning modal-open-button alert-button"
       >
         Open Native Alert Dialog
       </button>

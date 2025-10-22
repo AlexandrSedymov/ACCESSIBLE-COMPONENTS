@@ -104,12 +104,14 @@ jobs:
           serve -s dist -l 3000 &
           sleep 5
 
-      - name: Install axe-core CLI
-        run: npm install -g @axe-core/cli
+      - name: Install axe-core CLI and setup Chrome
+        run: |
+          npm install -g @axe-core/cli
+          npx browser-driver-manager install chrome
 
       - name: Run axe-core accessibility scan
         run: |
-          axe http://localhost:3000 --exit --reporter json --save axe-results.json
+          axe http://localhost:3000 --exit --save axe-results.json
 
       - name: Upload axe results
         uses: actions/upload-artifact@v4

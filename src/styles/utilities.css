@@ -1,0 +1,291 @@
+/* Utilities.css - Common reusable styles across the application */
+
+/* ==========================================================================
+   Page Titles and Headers
+   ========================================================================== */
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  text-align: left;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* ==========================================================================
+   Spacing Utilities
+   ========================================================================== */
+
+.container-padding {
+  padding: 2rem;
+}
+
+.container-padding-sm {
+  padding: 1rem;
+}
+
+.container-padding-xs {
+  padding: 0.5rem;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-1-5 {
+  margin-bottom: 1.5rem;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Border Radius Utilities
+   ========================================================================== */
+
+.rounded-sm {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 6px;
+}
+
+.rounded-lg {
+  border-radius: 8px;
+}
+
+.rounded-xl {
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   Background Colors
+   ========================================================================== */
+
+.bg-light-gray {
+  background: #f8f9fa;
+}
+
+.bg-lighter-gray {
+  background: #f7fafc;
+}
+
+.bg-white {
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   Common Button Styles
+   ========================================================================== */
+
+.btn-base {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.btn-base:hover {
+  transform: translateY(-1px);
+}
+
+.btn-base:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-base:focus {
+  outline-offset: 2px;
+}
+
+/* Button color variants */
+.btn-primary {
+  background: #553c9a;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #6b46c1;
+  box-shadow: 0 4px 8px rgba(85, 60, 154, 0.3);
+}
+
+.btn-primary:focus {
+  outline: 2px solid #805ad5;
+}
+
+.btn-warning {
+  background: #d69e2e;
+  color: #1a202c;
+}
+
+.btn-warning:hover {
+  background: #b7791f;
+  box-shadow: 0 4px 8px rgba(214, 158, 46, 0.3);
+}
+
+.btn-warning:focus {
+  outline: 2px solid #975a16;
+}
+
+/* ==========================================================================
+   Modal/Dialog Common Styles
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 300px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-icon:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.modal-close-icon:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Card/Container Styles
+   ========================================================================== */
+
+.card {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.code-container {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-height: 200px;
+  max-width: 90%;
+}
+
+/* ==========================================================================
+   Form Utilities
+   ========================================================================== */
+
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+}
+
+.form-input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+  outline: none;
+}
+
+/* ==========================================================================
+   Text Utilities
+   ========================================================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .container-padding {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .container-padding {
+    padding: 0.5rem;
+  }
+}

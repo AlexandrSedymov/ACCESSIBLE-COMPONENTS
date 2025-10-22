@@ -1,18 +1,6 @@
 /* Home.css */
-
-.home-container {
-  padding: 2rem;
-}
-
-.home-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1a202c;
-  margin-bottom: 2rem;
-  text-align: left;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 1rem;
-}
+/* Note: .home-container now uses .container-padding utility class */
+/* Note: .home-title now uses .page-title utility class */
 
 .home-description {
   color: #666;
@@ -21,30 +9,14 @@
   margin-bottom: 1rem;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for home-description only */
 @media (max-width: 768px) {
-  .home-container {
-    padding: 1rem;
-  }
-
-  .home-title {
-    font-size: 2rem;
-  }
-
   .home-description {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .home-container {
-    padding: 0.5rem;
-  }
-
-  .home-title {
-    font-size: 1.8rem;
-  }
-
   .home-description {
     font-size: 1rem;
   }

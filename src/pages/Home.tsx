@@ -1,16 +1,17 @@
 import React from 'react';
+import '../styles/utilities.css';
 import '../styles/Home.css';
 import LinkSection from '../components/LinkSection';
 
 export const Home: React.FC = () => {
   return (
-    <main className="home-container" role="main" id="main-content">
+    <main className="container-padding" role="main" id="main-content">
       <title>Accessibility Components - Learn & Build Accessible UI</title>
       <meta
         name="description"
         content="A comprehensive collection of accessible-first UI components with practical examples for developers."
       />
-      <h1 className="home-title" id="main-title">Welcome to accessible components playground</h1>
+      <h1 className="page-title" id="main-title">Welcome to accessible components playground</h1>
       <p className="home-description">
         A collection of practical, accessible-first UI components. This project serves as a living
         guide to implementing web accessibility, providing documented examples for UX designers,
