@@ -1,8 +1,6 @@
 /* ModalDialog.css - Shared Layout Styles for Modal Examples Page */
 
-.modal-page {
-  padding: 1rem;
-}
+/* Note: .modal-page now uses .container-padding-sm utility class */
 
 .modal-example {
   margin: 2rem auto;
@@ -19,11 +17,9 @@
   gap: 1rem;
 }
 
+/* Note: .modal-example-right now uses .code-container utility class with additional specific styles */
 .modal-example-right {
-  background: #f8f9fa;
   border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1.5rem;
   min-height: 200px;
   max-width: 90%;
 }
@@ -37,14 +33,9 @@
   padding-bottom: 0.5rem;
 }
 
+/* Note: .modal-page-title now uses .page-title utility class with specific margin override */
 .modal-page-title {
-  text-align: left;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #1a202c;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem; /* Override default 2rem from .page-title */
 }
 
 /* Section headings for modal examples */
@@ -80,13 +71,9 @@
     width: 100%;
   }
 
-  .modal-page {
-    padding: 0.75rem;
-  }
+  /* Responsive padding handled by utilities */
 }
 
 @media (max-width: 480px) {
-  .modal-page {
-    padding: 0.5rem;
-  }
+  /* Responsive padding handled by utilities */
 }

@@ -15,6 +15,7 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
+    "test:ci": "CI=true vitest run",
     "test:coverage": "vitest run --coverage",
     "test:a11y": "vitest run --reporter=verbose",
     "test:e2e": "playwright test",
@@ -23,7 +24,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write . && yarn lint:fix",
-    "ci": "yarn lint:check && yarn type-check && yarn test:run && yarn build",
+    "ci": "yarn lint:check && yarn type-check && yarn test:ci && yarn build",
     "validate": "yarn format:fix && yarn type-check && yarn test:a11y && yarn build"
   },
   "dependencies": {
@@ -67,7 +68,6 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-testing-library": "^7.10.0",
-    "eslint-plugin-vitest": "^0.5.4",
     "globals": "^16.3.0",
     "jest-axe": "^10.0.0",
     "jsdom": "^27.0.0",
@@ -79,5 +79,5 @@
     "vite": "^7.1.2",
     "vitest": "^3.2.4"
   },
-  "packageManager": "yarn@4.10.2"
+  "packageManager": "yarn@4.10.3"
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
+import '../styles/utilities.css';
 import '../styles/LibraryModal.css';
 
 export const LibraryModal: React.FC = () => {
@@ -11,7 +12,7 @@ export const LibraryModal: React.FC = () => {
 
   return (
     <div className="library-modal-demo">
-      <button className="library-modal-trigger" onClick={() => setIsOpen(true)}>
+      <button className="btn-base btn-primary library-modal-trigger" onClick={() => setIsOpen(true)}>
         Open Library Modal
       </button>
 

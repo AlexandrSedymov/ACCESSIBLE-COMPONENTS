@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import '../styles/utilities.css';
 import '../styles/InformationModal.css';
 
 // React way of creating a modal dialog with focus management and accessibility features
