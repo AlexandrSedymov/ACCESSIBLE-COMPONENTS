@@ -15,12 +15,13 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
+    "test:ci": "CI=true vitest run",
     "test:coverage": "vitest run --coverage",
     "test:a11y": "vitest run --reporter=verbose",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write . && yarn lint:fix",
-    "ci": "yarn lint:check && yarn type-check && yarn test:run && yarn build",
+    "ci": "yarn lint:check && yarn type-check && yarn test:ci && yarn build",
     "validate": "yarn format:fix && yarn type-check && yarn test:a11y && yarn build"
   },
   "dependencies": {
