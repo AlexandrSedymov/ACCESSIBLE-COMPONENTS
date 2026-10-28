@@ -202,7 +202,7 @@ test('navigation works correctly', async ({ page }) => {
 ## 🔧 Development Workflow
 
 ### Local Development
-1. **Setup**: `yarn install` - Install dependencies
+1. **Setup**: `pnpm install` - Install dependencies
 2. **Development**: `yarn dev` - Start dev server with HMR
 3. **Testing**: `yarn test:watch` - Run tests in watch mode
 4. **Type Checking**: `yarn type-check` - Verify TypeScript types

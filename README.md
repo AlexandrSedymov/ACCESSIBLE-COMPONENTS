@@ -31,7 +31,7 @@ git clone https://github.com/AlexandrSedymov/ACCESSIBLE-COMPONENTS.git
 cd ACCESSIBLE-COMPONENTS
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Start development server
 yarn dev

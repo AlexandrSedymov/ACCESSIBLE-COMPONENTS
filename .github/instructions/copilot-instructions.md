@@ -14,7 +14,7 @@
 - `docs/`: Accessibility guides and solutions for focus management and screen readers.
 
 ## Developer Workflows
-- **Install dependencies:** `yarn install` (Yarn 4 required; use Corepack)
+- **Install dependencies:** `pnpm install` (pnpm required; use Corepack)
 - **Start dev server:** `yarn dev` (Vite, runs at http://localhost:5173)
 - **Run unit tests:** `yarn test` (Vitest)
 - **Run accessibility tests:** `yarn test:a11y` (axe-core integration)

@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 .yarn/
+pnpm-lock.yaml
 .pnp.*
 
 # Build outputs
