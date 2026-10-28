@@ -152,7 +152,7 @@ main[tabindex="-1"]:focus {
 Run the focus management tests:
 
 ```bash
-yarn test src/hooks/__tests__/useFocusManagement.test.ts
+pnpm test src/hooks/__tests__/useFocusManagement.test.ts
 ```
 
 The tests verify:

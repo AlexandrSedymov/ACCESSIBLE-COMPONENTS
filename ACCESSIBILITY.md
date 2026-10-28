@@ -24,16 +24,16 @@ This project uses multiple tools to ensure accessibility compliance:
 
 ```bash
 # Run all tests including accessibility
-yarn test
+pnpm test
 
 # Run only accessibility tests with verbose output
-yarn test:a11y
+pnpm test:a11y
 
 # Run tests in watch mode during development
-yarn test:watch
+pnpm test:watch
 
 # Run complete validation (lint + test + build)
-yarn validate
+pnpm validate
 ```
 
 ## CI/CD Integration

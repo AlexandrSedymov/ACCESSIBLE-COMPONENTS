@@ -24,8 +24,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write . && pnpm lint:fix",
-    "ci": "yarn lint:check && yarn type-check && yarn test:ci && yarn build",
-    "validate": "yarn format:fix && yarn type-check && yarn test:a11y && yarn build"
+    "ci": "pnpm lint:check && pnpm type-check && pnpm test:ci && pnpm build",
+    "validate": "pnpm format:fix && pnpm type-check && pnpm test:a11y && pnpm build"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.2.1",

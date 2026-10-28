@@ -15,12 +15,12 @@
 
 ## Developer Workflows
 - **Install dependencies:** `pnpm install` (pnpm required; use Corepack)
-- **Start dev server:** `yarn dev` (Vite, runs at http://localhost:5173)
-- **Run unit tests:** `yarn test` (Vitest)
-- **Run accessibility tests:** `yarn test:a11y` (axe-core integration)
-- **Run e2e tests:** `yarn test:e2e` (Playwright)
-- **Lint & format:** `yarn lint`, `yarn format`, `yarn validate`
-- **Build for production:** `yarn build`
+- **Start dev server:** `pnpm dev` (Vite, runs at http://localhost:5173)
+- **Run unit tests:** `pnpm test` (Vitest)
+- **Run accessibility tests:** `pnpm test:a11y` (axe-core integration)
+- **Run e2e tests:** `pnpm test:e2e` (Playwright)
+- **Lint & format:** `pnpm lint`, `pnpm format`, `pnpm validate`
+- **Build for production:** `pnpm build`
 
 ## Patterns & Conventions
 - **Accessibility-first:** All components use ARIA roles, keyboard handlers, and focus management utilities.
