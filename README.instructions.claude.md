@@ -951,10 +951,10 @@ manualChunks: {
 
 ```bash
 # 1. Start development server
-yarn dev
+pnpm dev
 
 # 2. Run tests in watch mode (separate terminal)
-yarn test:watch
+pnpm test:watch
 
 # 3. Make changes
 # - Edit components in src/components/
@@ -966,25 +966,25 @@ yarn test:watch
 # - Run tests to catch regressions
 
 # 5. Format and lint
-yarn format:fix  # Fix formatting and linting
+pnpm format:fix  # Fix formatting and linting
 
 # 6. Type check
-yarn type-check
+pnpm type-check
 
 # 7. Build
-yarn build
+pnpm build
 
 # 8. Preview build
-yarn preview
+pnpm preview
 ```
 
 ### Pre-Commit Checklist
 
-- [ ] All tests pass (`yarn test:run`)
-- [ ] No linting errors (`yarn lint`)
-- [ ] No type errors (`yarn type-check`)
+- [ ] All tests pass (`pnpm test:run`)
+- [ ] No linting errors (`pnpm lint`)
+- [ ] No type errors (`pnpm type-check`)
 - [ ] No accessibility violations (check console)
-- [ ] Code formatted (`yarn format`)
+- [ ] Code formatted (`pnpm format`)
 
 ### CI/CD Workflow
 

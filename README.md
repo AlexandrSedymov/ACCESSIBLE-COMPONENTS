@@ -31,10 +31,10 @@ git clone https://github.com/AlexandrSedymov/ACCESSIBLE-COMPONENTS.git
 cd ACCESSIBLE-COMPONENTS
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Start development server
-yarn dev
+pnpm dev
 ```
 
 Visit `http://localhost:5173` to see the components in action.
@@ -71,48 +71,48 @@ src/
 
 ```bash
 # Run accessibility tests
-yarn test:a11y
+pnpm test:a11y
 
 # Run all tests
-yarn test
+pnpm test
 
 # Run tests in watch mode
-yarn test:watch
+pnpm test:watch
 
 # Generate coverage report
-yarn test:coverage
+pnpm test:coverage
 ```
 
 ### Code Quality
 
 ```bash
 # Lint code
-yarn lint
+pnpm lint
 
 # Fix linting issues
-yarn lint:fix
+pnpm lint:fix
 
 # Format code with Prettier
-yarn format
+pnpm format
 
 # Complete validation (format + lint + test + build)
-yarn validate
+pnpm validate
 ```
 
 ## 🛠️ Development Scripts
 
 | Command           | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| `yarn dev`        | Start development server                       |
-| `yarn build`      | Build for production                           |
-| `yarn preview`    | Preview production build                       |
-| `yarn test`       | Run test suite                                 |
-| `yarn test:ui`    | Run tests with UI                              |
-| `yarn lint`       | Check code quality                             |
-| `yarn format`     | Format code with Prettier                      |
-| `yarn type-check` | TypeScript type checking                       |
-| `yarn ci`         | Complete CI pipeline                           |
-| `yarn validate`   | Full validation (format + lint + test + build) |
+| `pnpm dev`        | Start development server                       |
+| `pnpm build`      | Build for production                           |
+| `pnpm preview`    | Preview production build                       |
+| `pnpm test`       | Run test suite                                 |
+| `pnpm test:ui`    | Run tests with UI                              |
+| `pnpm lint`       | Check code quality                             |
+| `pnpm format`     | Format code with Prettier                      |
+| `pnpm type-check` | TypeScript type checking                       |
+| `pnpm ci`         | Complete CI pipeline                           |
+| `pnpm validate`   | Full validation (format + lint + test + build) |
 
 ## 📚 Documentation
 

@@ -7,31 +7,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // React core libraries
-          'react-vendor': ['react', 'react-dom'],
+        manualChunks(id: string) {
+          if (!id.includes('node_modules')) return undefined;
 
-          // Router library
-          router: ['react-router-dom'],
-
-          // Syntax highlighter (only what we need)
-          'syntax-highlighter': ['react-syntax-highlighter/dist/esm/light'],
-
-          // Individual language chunks for better splitting
-          'syntax-languages': [
-            'react-syntax-highlighter/dist/esm/languages/prism/javascript',
-            'react-syntax-highlighter/dist/esm/languages/prism/typescript',
-            'react-syntax-highlighter/dist/esm/languages/prism/jsx',
-            'react-syntax-highlighter/dist/esm/languages/prism/tsx',
-            'react-syntax-highlighter/dist/esm/languages/prism/css',
-            'react-syntax-highlighter/dist/esm/languages/prism/markup',
-          ],
-
-          // Theme as separate chunk
-          'syntax-theme': ['react-syntax-highlighter/dist/esm/styles/prism/one-dark'],
-
-          // Utility libraries
-          utils: ['clsx', 'tailwind-merge'],
+          if (id.includes('react-syntax-highlighter/dist/esm/languages/')) return 'syntax-languages';
+          if (id.includes('react-syntax-highlighter/dist/esm/styles/')) return 'syntax-theme';
+          if (id.includes('react-syntax-highlighter')) return 'syntax-highlighter';
+          if (/node_modules\/(react|react-dom|scheduler)\//.test(id)) return 'react-vendor';
+          if (/node_modules\/(react-router|react-router-dom)\//.test(id)) return 'router';
+          if (/node_modules\/(clsx|tailwind-merge)\//.test(id)) return 'utils';
+          return undefined;
         },
       },
     },

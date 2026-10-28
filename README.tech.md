@@ -202,12 +202,12 @@ test('navigation works correctly', async ({ page }) => {
 ## 🔧 Development Workflow
 
 ### Local Development
-1. **Setup**: `yarn install` - Install dependencies
-2. **Development**: `yarn dev` - Start dev server with HMR
-3. **Testing**: `yarn test:watch` - Run tests in watch mode
-4. **Type Checking**: `yarn type-check` - Verify TypeScript types
-5. **Linting**: `yarn lint:fix` - Fix code quality issues
-6. **Formatting**: `yarn format` - Apply consistent formatting
+1. **Setup**: `pnpm install` - Install dependencies
+2. **Development**: `pnpm dev` - Start dev server with HMR
+3. **Testing**: `pnpm test:watch` - Run tests in watch mode
+4. **Type Checking**: `pnpm type-check` - Verify TypeScript types
+5. **Linting**: `pnpm lint:fix` - Fix code quality issues
+6. **Formatting**: `pnpm format` - Apply consistent formatting
 
 ### Quality Assurance
 - **Pre-commit**: Automated formatting and linting
